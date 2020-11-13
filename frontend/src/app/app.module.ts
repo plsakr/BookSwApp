@@ -15,10 +15,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterUserComponent } from './register-user/register-user.component';
 
+import {AppRoutingModule} from './app-routing.module';
+import { LibraryComponent } from './library/library.component';
+import { BookComponent } from './book/book.component';
+import { UserComponent } from './user/user.component';
+import { CartComponent } from './cart/cart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    LibraryComponent,
+    BookComponent,
+    UserComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +40,8 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     MatFormFieldModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
