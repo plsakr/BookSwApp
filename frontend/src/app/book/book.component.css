@@ -1,0 +1,54 @@
+/*.parent {*/
+/*  display: flex;*/
+/*  width: 100%;*/
+/*}*/
+
+.book-info {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.book-image img {
+  width: 33vw;
+  max-width: 360px;
+  max-height: 480px;
+}
+
+.book-image {
+  flex: 1 auto;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.middle-col {
+  flex: 2 auto;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.right-col {
+  flex: 1 auto;
+  min-width: 270px;
+  max-width: 50%;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.mat-card-actions {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+.mat-card-actions h4{
+   margin-block-end: 0;
+ }
+
+
+@media only screen and (max-width: 800px) {
+  .book-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}

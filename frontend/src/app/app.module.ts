@@ -20,6 +20,9 @@ import { LibraryComponent } from './library/library.component';
 import { BookComponent } from './book/book.component';
 import { UserComponent } from './user/user.component';
 import { CartComponent } from './cart/cart.component';
+import {MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { CartComponent } from './cart/cart.component';
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
