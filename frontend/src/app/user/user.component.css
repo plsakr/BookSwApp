@@ -6,8 +6,9 @@
 }
 .title{
     display:inline;
-    position: absolute;]
+    position: absolute;
     left:0;
+    top:40%;
 }
 .content{
     display:inline;

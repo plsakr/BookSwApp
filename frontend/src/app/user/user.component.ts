@@ -85,7 +85,7 @@ export class UserComponent implements OnInit {
         branchName:"LAU Jbeil"
       },
       {
-        contractID:1,
+        contractID:3,
         bookName:"Lord of the Rings",
         startDate:"13/05/2020",
         endDate:"08/07/2020",
@@ -106,7 +106,7 @@ export class UserComponent implements OnInit {
         branchName:"LAU Jbeil"
       },
       {
-        contractID:1,
+        contractID:3,
         bookName:"Lord of the Rings",
         startDate:"13/05/2020",
         endDate:"08/07/2020",
