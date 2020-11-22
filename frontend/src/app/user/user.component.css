@@ -1,0 +1,25 @@
+.userField{
+    display: flex;
+    width:80%;
+    left:10%;
+    height: 3vmax;
+}
+.title{
+    display:inline;
+    position: absolute;]
+    left:0;
+}
+.content{
+    display:inline;
+    position: absolute;
+    left:40%;
+}
+table {
+    width: 100%;
+  }
+  button{
+      position:absolute;
+      right:0;
+      top:35%;
+      
+  }
