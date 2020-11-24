@@ -32,6 +32,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { ProductListComponent } from './components/shopping-cart/product-list/product-list.component';
 import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -49,23 +50,24 @@ import { ProductItemComponent } from './components/shopping-cart/product-list/pr
     CartItemComponent,
     ProductItemComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MatInputModule,
-    MatCardModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatIconModule,
-    AppRoutingModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatChipsModule,
-    MatTableModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        MatInputModule,
+        MatCardModule,
+        MatTabsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatIconModule,
+        AppRoutingModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatChipsModule,
+        MatTableModule,
+        MatToolbarModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

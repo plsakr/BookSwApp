@@ -1,5 +1,10 @@
-<app-nav>
-    </app-nav>
+<mat-toolbar color="primary">
+  <span>Book SwApp</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button><mat-icon class="white-icon">person</mat-icon></button>
+  <button mat-icon-button><mat-icon class="white-icon">shopping_cart</mat-icon></button>
+  <button mat-button>Logout</button> <!-- Buttons should be shown only when logged in-->
+</mat-toolbar>
 
 
 <router-outlet></router-outlet>

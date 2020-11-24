@@ -1,0 +1,11 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.white-icon {
+  color: white;
+}
+
+.material-icons {
+  position: relative;
+}
