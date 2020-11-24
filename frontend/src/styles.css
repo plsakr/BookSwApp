@@ -2,3 +2,43 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cart-item{
+    font-size: small;
+}
+
+.list-group-item:first-child{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+
+}
+
+.list-group-item:last-child{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+
+}
+
+.material-icons{
+    color: black ;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+}
+
+.card-body{
+    color: rgba( 0, 0, 0, 1) ;
+}
+
+.button_check_out{
+    position: absolute;
+    margin-right: 0;
+    margin-left: auto;
+    display:flex;
+    justify-content: flex-end;
+    bottom: 0;
+    right: 0;
+
+}

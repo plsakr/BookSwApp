@@ -21,10 +21,17 @@ import {AppRoutingModule} from './app-routing.module';
 import { LibraryComponent } from './library/library.component';
 import { BookComponent } from './book/book.component';
 import { UserComponent } from './user/user.component';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent } from './components/shopping-cart/cart/cart.component';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { NavComponent } from './components/shared/nav/nav.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ProductListComponent } from './components/shopping-cart/product-list/product-list.component';
+import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
+import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +41,13 @@ import {MatChipsModule} from '@angular/material/chips';
     BookComponent,
     UserComponent,
     CartComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    ShoppingCartComponent,
+    ProductListComponent,
+    CartItemComponent,
+    ProductItemComponent,
   ],
   imports: [
     BrowserModule,
