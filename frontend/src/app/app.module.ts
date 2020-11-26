@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -33,6 +33,7 @@ import { ProductListComponent } from './components/shopping-cart/product-list/pr
 import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -50,24 +51,26 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     CartItemComponent,
     ProductItemComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        MatInputModule,
-        MatCardModule,
-        MatTabsModule,
-        MatFormFieldModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatIconModule,
-        AppRoutingModule,
-        MatSelectModule,
-        MatOptionModule,
-        MatChipsModule,
-        MatTableModule,
-        MatToolbarModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
+    AppRoutingModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatChipsModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

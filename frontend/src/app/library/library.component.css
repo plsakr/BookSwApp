@@ -1,13 +1,21 @@
 .sidebar {
-  width: 160px;
-  border: #303F9F dashed medium;
+  width: 180px;
+  /*border: #303F9F dashed medium;*/
   position: fixed;
   z-index: 1;
   left: 0;
   margin-top: 40px;
   margin-left: 20px;
   overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden;
   padding-top: 20px;
+  padding-left: 10px;
+  border-radius: 10px;
+  padding-right: 10px;
+}
+
+.sidebar-content mat-form-field {
+  width: 100%;
 }
 
 .middle-content {
@@ -18,11 +26,30 @@
 }
 
 .search mat-form-field {
-  width: 100%;
+  width: 95%;
   margin-left: 10px;
   margin-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  border-radius: 5px;
 }
 
 .search {
   height: fit-content;
+}
+
+.material-icons {
+  position: relative !important;
+}
+
+.radios {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.my-tags {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
