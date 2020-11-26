@@ -1,0 +1,28 @@
+.sidebar {
+  width: 160px;
+  border: #303F9F dashed medium;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  margin-top: 40px;
+  margin-left: 20px;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.middle-content {
+  margin-right: 25px;
+  padding-top: 20px;
+  margin-left: 200px;
+  width: auto;
+}
+
+.search mat-form-field {
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+.search {
+  height: fit-content;
+}
