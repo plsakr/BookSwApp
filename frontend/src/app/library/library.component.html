@@ -46,4 +46,31 @@
       </mat-form-field>
   </div>
 
+  <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5,10,20,50]" [showFirstLastButtons]="true" [length]="totalSize"
+                 [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">
+  </mat-paginator>
+  <div class="book-list">
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+      <div [fxFlex]="(100/gridColumns)+'%'" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let i of currentData; let bi=index;">
+        <mat-card class="book">
+          <img mat-card-image [src]="i.image" class="book-image"/>
+          <mat-card-content>
+            <h4>{{i.title}}</h4>
+            <h4>{{i.author}}</h4>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="my-buttons">
+
+            <button mat-button>View</button>
+              <button mat-icon-button><mat-icon>add_shopping_cart</mat-icon></button>
+
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5,10,20,50]" [showFirstLastButtons]="true" [length]="totalSize"
+                 [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">
+  </mat-paginator>
 </div>

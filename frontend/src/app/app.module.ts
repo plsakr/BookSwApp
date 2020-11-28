@@ -34,6 +34,9 @@ import { CartItemComponent } from './components/shopping-cart/cart/cart-item/car
 import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatRadioModule} from '@angular/material/radio';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {FlexModule} from '@angular/flex-layout';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -51,26 +54,29 @@ import {MatRadioModule} from '@angular/material/radio';
     CartItemComponent,
     ProductItemComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MatInputModule,
-    MatCardModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatIconModule,
-    AppRoutingModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatChipsModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatRadioModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        MatInputModule,
+        MatCardModule,
+        MatTabsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatIconModule,
+        AppRoutingModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatChipsModule,
+        MatTableModule,
+        MatToolbarModule,
+        MatRadioModule,
+        ReactiveFormsModule,
+        MatGridListModule,
+        FlexModule,
+        MatPaginatorModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

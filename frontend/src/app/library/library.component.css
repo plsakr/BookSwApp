@@ -12,6 +12,7 @@
   padding-left: 10px;
   border-radius: 10px;
   padding-right: 10px;
+  background: white;
 }
 
 .sidebar-content mat-form-field {
@@ -23,16 +24,23 @@
   padding-top: 20px;
   margin-left: 200px;
   width: auto;
+  overflow-x: hidden;
+}
+
+.mat-paginator {
+  background-color: #F6F6F6;
 }
 
 .search mat-form-field {
-  width: 95%;
+  width: 100%;
   margin-left: 10px;
   margin-right: 50px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
   border-radius: 5px;
+  background: white;
+
 }
 
 .search {
@@ -52,4 +60,27 @@
 .my-tags {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/*.book {*/
+/*  width: 15rem;*/
+/*  margin: 5px 5px 20px;*/
+/*}*/
+
+/*.book #img {*/
+/*  max-height: 10rem;*/
+/*}*/
+
+.book-image {
+  max-height: 300px;
+}
+
+.book-list {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+
+.my-buttons {
+  display: flex;
+  justify-content: space-between;
 }
