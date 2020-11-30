@@ -1,26 +1,51 @@
 .userField{
     display: flex;
-    width:80%;
-    left:10%;
+    width:95%;
+    /* left:2.5%; */
+    top:0;
+    position: relative;
     height: 3vmax;
+    padding: 0;
 }
 .title{
     display:inline;
     position: absolute;
     left:0;
-    top:40%;
+    /* top:40%; */
 }
 .content{
     display:inline;
     position: absolute;
     left:40%;
+    top:-6px;
 }
 table {
     width: 100%;
   }
-  button{
-      position:absolute;
-      right:0;
-      top:35%;
-      
-  }
+button{
+    position:absolute;
+    right:0;
+    /* top:35%; */
+    
+}
+.CardDisplayArea{
+    left:20%;
+    top:5%;
+    width:60%;
+}
+/* .fieldTitle{
+    color: darkslateblue;
+} */
+.UserProfile{
+    background-image: url('../../images/BookPicture.jpg');
+    height: 100%;
+    position: fixed;
+    top:64px;
+    width: 100%;
+    overflow-y: hidden;
+
+}
+.fieldTitle{
+    top:6px;
+    position:relative;
+}

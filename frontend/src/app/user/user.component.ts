@@ -112,6 +112,89 @@ export class UserComponent implements OnInit {
         endDate:"08/07/2020",
         branchName:"LAU Beirut"
       },
+      {
+        contractID:1,
+        bookName:"War and Peace",
+        startDate:"10/10/2020",
+        endDate:"31/11/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:2,
+        bookName:"The Great Gatsby",
+        startDate:"09/06/2020",
+        endDate:"30/10/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:3,
+        bookName:"Lord of the Rings",
+        startDate:"13/05/2020",
+        endDate:"08/07/2020",
+        branchName:"LAU Beirut"
+      },
+      {
+        contractID:1,
+        bookName:"War and Peace",
+        startDate:"10/10/2020",
+        endDate:"31/11/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:2,
+        bookName:"The Great Gatsby",
+        startDate:"09/06/2020",
+        endDate:"30/10/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:3,
+        bookName:"Lord of the Rings",
+        startDate:"13/05/2020",
+        endDate:"08/07/2020",
+        branchName:"LAU Beirut"
+      },{
+        contractID:1,
+        bookName:"War and Peace",
+        startDate:"10/10/2020",
+        endDate:"31/11/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:2,
+        bookName:"The Great Gatsby",
+        startDate:"09/06/2020",
+        endDate:"30/10/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:3,
+        bookName:"Lord of the Rings",
+        startDate:"13/05/2020",
+        endDate:"08/07/2020",
+        branchName:"LAU Beirut"
+      },
+      {
+        contractID:1,
+        bookName:"War and Peace",
+        startDate:"10/10/2020",
+        endDate:"31/11/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:2,
+        bookName:"The Great Gatsby",
+        startDate:"09/06/2020",
+        endDate:"30/10/2020",
+        branchName:"LAU Jbeil"
+      },
+      {
+        contractID:3,
+        bookName:"Lord of the Rings",
+        startDate:"13/05/2020",
+        endDate:"08/07/2020",
+        branchName:"LAU Beirut"
+      },
     ]
 
   }
