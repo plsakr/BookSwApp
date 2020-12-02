@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\peter\\Desktop\\DB Proj\\BookSwApp\\BackEnd\\BackEnd\\BackEnd\\BackEnd.csproj": {}
+    "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\peter\\Desktop\\DB Proj\\BookSwApp\\BackEnd\\BackEnd\\BackEnd\\BackEnd.csproj": {
+    "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Desktop\\DB Proj\\BookSwApp\\BackEnd\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\peter\\Desktop\\DB Proj\\BookSwApp\\BackEnd\\BackEnd\\BackEnd\\BackEnd.csproj",
-        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Desktop\\DB Proj\\BookSwApp\\BackEnd\\BackEnd\\BackEnd\\obj\\",
+        "projectPath": "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj",
+        "packagesPath": "/Users/peter/.nuget/packages/",
+        "outputPath": "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/peter/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -100,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
         }
       }
     }

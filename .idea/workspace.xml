@@ -20,10 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325ae228-81f2-442e-9b50-4fd7c04334f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/library/library.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/library/library.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/library/library.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/library/library.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/library/library.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/library/library.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/.idea/.idea.BackEnd/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/.idea/.idea.BackEnd/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/.idea/.idea.BackEnd/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/.idea/.idea.BackEnd/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/.idea/.idea.BackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/.idea/.idea.BackEnd/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Helpers/JwtMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Helpers/JwtMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/BackEnd.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/BackEnd.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/BackEnd.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/BackEnd.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/Debug/netcoreapp3.1/BackEnd.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/Debug/netcoreapp3.1/BackEnd.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd/BackEnd/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/register-user/register-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/register-user/register-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/register-user/register-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/register-user/register-user.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +74,10 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.Start App">
+    <configuration name="Start App" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="js.build_tools.grunt">
       <node-interpreter value="project" />
       <envs />
@@ -78,6 +99,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Start App" />
+      <item itemvalue="npm.Start Angular Server" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,6 +115,7 @@
       <workItem from="1605511904086" duration="613000" />
       <workItem from="1606246748219" duration="2918000" />
       <workItem from="1606327305091" duration="1590000" />
+      <workItem from="1606845517209" duration="12093000" />
     </task>
     <task id="LOCAL-00001" summary="fixed navigation bar">
       <created>1606249860869</created>
@@ -129,26 +155,86 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixed login width" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="104" y="28" width="1071" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606248582368">
+    <state x="435" y="187" key="#Web_Browsers" timestamp="1606905587467">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="104" y="28" width="1071" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1606248582368" />
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1606341674462">
+    <state x="435" y="187" key="#Web_Browsers/0.0.1280.800@0.0.1280.800" timestamp="1606905587467" />
+    <state x="104" y="4" width="1071" height="796" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606905621691">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606341674462" />
-    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1606341674461">
+    <state x="104" y="4" width="1071" height="796" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1606905621691" />
+    <state x="453" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1606847065614">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606341674461" />
-    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1606341674460">
+    <state x="453" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1606847065614" />
+    <state width="1259" height="264" key="GridCell.Tab.0.bottom" timestamp="1606940288031">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606341674460" />
-    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1606341674461">
+    <state width="1259" height="264" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606940288031" />
+    <state width="1259" height="264" key="GridCell.Tab.0.center" timestamp="1606940288030">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606341674461" />
+    <state width="1259" height="264" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606940288030" />
+    <state width="1259" height="264" key="GridCell.Tab.0.left" timestamp="1606940288028">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606940288028" />
+    <state width="1259" height="264" key="GridCell.Tab.0.right" timestamp="1606940288031">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606940288031" />
+    <state width="1259" height="264" key="GridCell.Tab.1.bottom" timestamp="1606940288035">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606940288035" />
+    <state width="1259" height="264" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606909857446" />
+    <state width="1259" height="264" key="GridCell.Tab.1.center" timestamp="1606940288034">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1606940288034" />
+    <state width="1259" height="264" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1606909857445" />
+    <state width="1259" height="264" key="GridCell.Tab.1.left" timestamp="1606940288032">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1606940288032" />
+    <state width="1259" height="264" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1606909857444" />
+    <state width="1259" height="264" key="GridCell.Tab.1.right" timestamp="1606940288034">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1606940288034" />
+    <state width="1259" height="264" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1606909857446" />
+    <state width="1259" height="264" key="GridCell.Tab.2.bottom" timestamp="1606940288038">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.2.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606940288038" />
+    <state width="1259" height="264" key="GridCell.Tab.2.center" timestamp="1606940288037">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.2.center/0.0.1280.800@0.0.1280.800" timestamp="1606940288037" />
+    <state width="1259" height="264" key="GridCell.Tab.2.left" timestamp="1606940288035">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.2.left/0.0.1280.800@0.0.1280.800" timestamp="1606940288035" />
+    <state width="1259" height="264" key="GridCell.Tab.2.right" timestamp="1606940288038">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.2.right/0.0.1280.800@0.0.1280.800" timestamp="1606940288038" />
+    <state width="1259" height="264" key="GridCell.Tab.3.bottom" timestamp="1606940288040">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.3.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606940288040" />
+    <state width="1259" height="264" key="GridCell.Tab.3.center" timestamp="1606940288039">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.3.center/0.0.1280.800@0.0.1280.800" timestamp="1606940288039" />
+    <state width="1259" height="264" key="GridCell.Tab.3.left" timestamp="1606940288039">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.3.left/0.0.1280.800@0.0.1280.800" timestamp="1606940288039" />
+    <state width="1259" height="264" key="GridCell.Tab.3.right" timestamp="1606940288040">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="264" key="GridCell.Tab.3.right/0.0.1280.800@0.0.1280.800" timestamp="1606940288040" />
     <state x="149" y="39" key="SettingsEditor" timestamp="1606248473453">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -157,5 +243,9 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="127" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606250241155" />
+    <state x="100" y="100" width="1080" height="600" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606904923556">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="100" y="100" width="1080" height="600" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.800@0.0.1280.800" timestamp="1606904923556" />
   </component>
 </project>

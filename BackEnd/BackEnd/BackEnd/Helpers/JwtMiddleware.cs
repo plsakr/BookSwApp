@@ -21,10 +21,13 @@ namespace BackEnd.Helpers
 
         public async Task Invoke(HttpContext context)
         {
-            var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-
-            if (token != null)
-                attachUserToContext(context, token);
+            //var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            if (context.Request.Cookies.ContainsKey("session"))
+            {
+                var token = context.Request.Cookies["session"];
+                if (token != "")
+                    attachUserToContext(context, token);
+            }
 
             await _next(context);
         }

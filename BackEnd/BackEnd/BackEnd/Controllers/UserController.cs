@@ -1,20 +1,21 @@
 ﻿using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using Microsoft.IdentityModel.Tokens;
-
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using BackEnd.Entities;
 using BackEnd.Helpers;
 using BackEnd.Models;
 using BackEnd.Services;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
+using SameSiteMode = Microsoft.AspNetCore.Http.SameSiteMode;
 
 namespace BackEnd.Controllers
 {
+    // [EnableCors("MyPolicy")]
     [ApiController]
     [Route("[controller]")]
     public class UserController : Controller
@@ -35,7 +36,12 @@ namespace BackEnd.Controllers
             if (result == null)
                 return BadRequest(new {message = "Username or password incorrect!"});
             
-            return Ok(result);
+            var option = new CookieOptions();
+            option.Expires = DateTime.Now.AddDays(1);
+            option.HttpOnly = true;
+            option.SameSite = SameSiteMode.Lax;
+            Response.Cookies.Append("session", result, option);
+            return Ok();
         }
 
         [HttpPost("register")]
@@ -46,7 +52,11 @@ namespace BackEnd.Controllers
             if (result == null)
                 return BadRequest(new {message = "User with given email exists!"});
             
-            return Ok(result);
+            var option = new CookieOptions();
+            option.Expires = DateTime.Now.AddDays(1);
+            option.HttpOnly = true;
+            Response.Cookies.Append("session", result, option);
+            return Ok();
         }
 
         [AuthorizeUser]

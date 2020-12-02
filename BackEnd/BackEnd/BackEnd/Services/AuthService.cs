@@ -32,6 +32,8 @@ namespace BackEnd.Services
         public async Task<string> AuthenticateUser(string email, string simplePass)
         {
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
+            if (user == null)
+                return null;
             var hashedTry = HashPassword(simplePass, user.Salt);
             if (hashedTry != user.Password)
                 return null;

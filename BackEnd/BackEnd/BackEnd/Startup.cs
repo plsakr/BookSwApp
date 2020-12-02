@@ -21,7 +21,7 @@ namespace BackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+
             services.AddControllers();
             services.AddDbContext<DbAppContext>(options => options.UseMySQL(Configuration.GetConnectionString("MainDB")));
             services.AddScoped<IAuthService, AuthService>();
@@ -31,13 +31,15 @@ namespace BackEnd
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-
+            app.UseCors(builder =>
+            {
+                builder.SetIsOriginAllowed(x => x == "http://localhost:4200" || x == "http://127.0.0.1:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
+            });
             app.UseRouting();
-
-            app.UseCors(x => x.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
+            
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
