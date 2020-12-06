@@ -24,7 +24,7 @@
                                 <span class="title">
                                     <h3 class="fieldTitle">{{ field.title }}</h3>
                                 </span>
-                                <span class="content">
+                                <span class="content" *ngIf="field.editable">
                                     <!-- <mat-card-title> {{ field.content }} </mat-card-title> -->
                                     <form action="">
                                         <mat-form-field style="border:none" >
@@ -39,8 +39,12 @@
                                     </form>
                                     
                                 </span>
+                                <span class="content" *ngIf="!field.editable">
+                                    <h3 class="contentNE">{{field.content}}</h3>
+                                    
+                                </span>
                                 <!-- <button type="button" ></button> -->
-                                <button mat-button color="primary" (click)="field.disabled=!field.disabled" style="border: 0;">{{field.disabled?"edit":"save"}}</button>
+                                <button mat-button color="primary" (click)="field.disabled=!field.disabled" style="border: 0;" *ngIf="field.editable">{{field.disabled?"edit":"save"}}</button>
                             </div>
                             <!-- </mat-card> -->
                         </ul>

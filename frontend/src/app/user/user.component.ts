@@ -4,6 +4,7 @@ interface Field{
   title:string;
   content:string;
   disabled:boolean;
+  editable:boolean;
 }
 interface History{
   contractID:number;
@@ -40,31 +41,31 @@ export class UserComponent implements OnInit {
         title:"Name",
         content:"kamal bassil",
         disabled:true,
+        editable:false,
       },
       {
         title:"User Name",
         content:"kamalbassil123",
         disabled:true,
+        editable:true,
       },
       {
         title:"Email",
         content:"kamal.bassil@lau.edu",
         disabled:true,
+        editable:true,
       },
       {
         title:"Phone Number",
         content:"71 123 456",
         disabled:true,
-      },
-      {
-        title:"University ID",
-        content:"LAU201800322",
-        disabled:true,
+        editable:true,
       },
       {
         title:"UserID",
-        content:"Idk if we want this if we have University ID",
+        content:"201800322",
         disabled:true,
+        editable:false,
       },
 
     ]
