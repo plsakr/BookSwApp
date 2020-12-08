@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -34,11 +34,12 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { ProductListComponent } from './components/shopping-cart/product-list/product-list.component';
 import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {FlexModule} from '@angular/flex-layout';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {AuthService} from './services/auth.service';
 import { BookListingComponent } from './components/book-listing/book-listing.component';
 
 @NgModule({
@@ -84,7 +85,7 @@ import { BookListingComponent } from './components/book-listing/book-listing.com
         MatDatepickerModule,
         MatNativeDateModule,
     ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

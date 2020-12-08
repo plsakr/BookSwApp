@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
+using Org.BouncyCastle.Bcpg;
 using SameSiteMode = Microsoft.AspNetCore.Http.SameSiteMode;
 
 namespace BackEnd.Controllers
@@ -30,17 +31,30 @@ namespace BackEnd.Controllers
         }
         
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<ActionResult<AuthResponse>> Login(LoginRequest request)
         {
             var result = await _auth.AuthenticateUser(request.Email, request.Password);
-            if (result == null)
+            if (result.token == null)
                 return BadRequest(new {message = "Username or password incorrect!"});
             
             var option = new CookieOptions();
             option.Expires = DateTime.Now.AddDays(1);
             option.HttpOnly = true;
             option.SameSite = SameSiteMode.Lax;
-            Response.Cookies.Append("session", result, option);
+            Response.Cookies.Append("session", result.token, option);
+            
+            return new AuthResponse {Id = result.userId.GetValueOrDefault(), Role = "USER"};
+        }
+        
+        [HttpGet("logout")]
+        public IActionResult Logout()
+        {
+            var option = new CookieOptions();
+            option.Expires = DateTime.Now.AddDays(1);
+            option.HttpOnly = true;
+            option.SameSite = SameSiteMode.Lax;
+            Response.Cookies.Append("session", "", option);
+
             return Ok();
         }
 
@@ -61,8 +75,17 @@ namespace BackEnd.Controllers
 
         [AuthorizeUser]
         [HttpGet("test")]
-        public IActionResult TestAuth()
+        public async Task<ActionResult<AuthResponse>> TestAuth()
         {
+            var email = HttpContext.Items["Email"] as string;
+            var role = HttpContext.Items["Role"] as string;
+
+            if (role == "USER")
+            {
+                var user = await _context.Users.FirstAsync(x => x.Email == email);
+                return new AuthResponse {Id = user.UserId.GetValueOrDefault(), Role = "USER"};
+            }
+            
             return Ok(HttpContext.Items["Email"]);
         }
         

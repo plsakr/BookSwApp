@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup, FormGroupDirective, NgForm,
   Validators
 } from '@angular/forms';
-import {AuthService} from '../services/auth.service';
+import {ApplicationUser, AuthService} from '../services/auth.service';
 import {ErrorStateMatcher} from '@angular/material/core';
+import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
 
 type LoginRequest = {
   email: string,
@@ -37,8 +39,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.css']
 })
-export class RegisterUserComponent implements OnInit {
-
+export class RegisterUserComponent implements OnInit, OnDestroy {
+  subscription$: Subscription = new Subscription();
   loginForm = this.fb.group({
     email: ['', [Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
     password: ['']
@@ -55,13 +57,36 @@ export class RegisterUserComponent implements OnInit {
   });
   passMatcher = new MyErrorStateMatcher();
 
-  constructor(private fb: FormBuilder, private auth: AuthService) { }
+  private getAuth(): AuthService { return this.auth; }
+
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
+    this.subscription$ = this.getAuth().user$.subscribe(this.onLoginSuccesful);
+  }
+
+  onLoginSuccesful = (user: ApplicationUser) => {
+    if (user.role === 'USER') {
+      this.router.navigate(['library']);
+      console.log('IM LOGGED IN');
+    } else if (user.role === 'LIBRARIAN') {
+      this.router.navigate(['user']);
+      console.log('IM A LIBRARIAN');
+    } else if (user.role === 'NONE') {
+      // didnt try logging in yet
+      console.log('going to try logging in!');
+      console.log(this.auth);
+      this.getAuth().testLogin();
+    }
+  }
+
+  onLoginFailed(): void {
+    console.log('IM NOT LOGGED IN');
+  }
 
   onLogin(): void {
     if (this.loginForm.valid) {
       const data = this.loginForm.getRawValue() as LoginRequest;
       console.log(data);
-      this.auth.login(data.email, data.password);
+      this.auth.login(data.email, data.password, this.onLoginFailed);
     }
   }
 
@@ -69,17 +94,17 @@ export class RegisterUserComponent implements OnInit {
     if (this.registerForm.valid) {
       const data = this.registerForm.getRawValue() as RegisterRequest;
       console.log(data);
-      this.auth.register(data.name, data.password.password, data.email);
+      this.getAuth().register(data.name, data.password.password, data.email);
     }
   }
 
-  testAuth(): void {
-    this.auth.test();
-  }
-
   ngOnInit(): void {
+
   }
 
+  ngOnDestroy(): void {
+    this.subscription$.unsubscribe();
+  }
 
   checkPasswords(group: FormGroup): any { // here we have the 'passwords' group
     const pass = group.get('password')?.value;
