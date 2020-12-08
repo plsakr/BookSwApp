@@ -16,7 +16,7 @@ namespace BackEnd.Services
 {
     public interface IAuthService
     {
-        public Task<string> AuthenticateUser(string email, string simplePass);
+        public Task<(string? token, int? userId)> AuthenticateUser(string email, string simplePass);
         public Task<string> RegisterUser(RegisterRequest req);
     }
     public class AuthService: IAuthService
@@ -29,17 +29,17 @@ namespace BackEnd.Services
             _context = context;
         }
 
-        public async Task<string> AuthenticateUser(string email, string simplePass)
+        public async Task<(string? token, int? userId)> AuthenticateUser(string email, string simplePass)
         {
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
             if (user == null)
-                return null;
+                return (null, null);
             var hashedTry = HashPassword(simplePass, user.Salt);
             if (hashedTry != user.Password)
-                return null;
+                return (null, null);
             
             var token = generateJwtToken(email);
-            return token;
+            return (token, user.UserId);
         }
 
         public async Task<string> RegisterUser(RegisterRequest req)
