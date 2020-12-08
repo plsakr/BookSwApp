@@ -9,7 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatDatepickerModule} from'@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatIconModule} from '@angular/material/icon';
@@ -38,6 +39,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {FlexModule} from '@angular/flex-layout';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { BookListingComponent } from './components/book-listing/book-listing.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ProductListComponent,
     CartItemComponent,
     ProductItemComponent,
+    BookListingComponent,
   ],
     imports: [
         BrowserModule,
@@ -78,6 +81,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatGridListModule,
         FlexModule,
         MatPaginatorModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
     ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

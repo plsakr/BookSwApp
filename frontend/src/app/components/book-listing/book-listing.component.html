@@ -1,0 +1,98 @@
+
+<div class="BookListing">
+
+    <mat-card class="CardDisplayArea">
+        <mat-card-title style="text-align:center;">Create A Book Listing!</mat-card-title>
+        <div class="example-container">
+            <mat-form-field appearance="fill" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+              <mat-label>ISBN</mat-label>
+              <input matInput placeholder="Please enter the book ISBN" formControlName="ISBN">
+            </mat-form-field>
+            <img src="./../../ISBN_notFound.jpg" class="unknownBookImage" *ngIf="true"/>
+            <br><br>
+            <div class="ISBN-isFound" *ngIf="false">
+              <span class="leftInput"><h3 style="display: inline; color:blue">Book name: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
+              <span class="rightInput"><h3 style="display: inline; color:blue">Author: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
+              <br><br>
+              <span class="leftInput"><h3 style="display: inline; color:blue">Genre: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
+              <span class="rightInput"><h3 style="display: inline; color:blue">Release date: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
+              <br><br>
+              <span class="leftInput"><h3 style="display: inline; color:blue">Publisher: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
+              <br><br>
+            </div>
+            <div class="ISBN-isNotFound" *ngIf="true">
+              <mat-form-field class="leftInput" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                  <mat-label>Book name</mat-label>
+                  <input matInput placeholder="Please enter the book name" formControlName="bookName">
+                </mat-form-field><mat-form-field class="rightInput" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                  <mat-label>Author name</mat-label>
+                  <input matInput placeholder="Please enter the author name" formControlName="authorName">
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field class="leftInput" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                  <mat-label>Genre</mat-label>
+                  <input matInput placeholder="Please enter the book genre" formControlName="genre">
+                </mat-form-field><mat-form-field class="rightInput" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                  <mat-label>Release Date</mat-label>
+                  <input matInput [matDatepicker]="picker1" formControlName="releaseDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field class="leftInput" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                  <mat-label>Publisher</mat-label>
+                  <input matInput placeholder="Please enter the book publisher" formControlName="publisher">
+                </mat-form-field>
+                <!-- <div class="unknownBookImage"></div> -->
+                
+                <br><br>
+
+                
+            </div>
+            <!-- <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+            </mat-form-field> -->
+              <!-- <input type="date"> -->
+
+               <!-- <mat-form-field appearance="fill" class="leftInput">
+                <mat-label>Select contract start date</mat-label>
+                <input matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="rightInput">
+                <mat-label>Select contract end date</mat-label>
+                <input matInput [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field> -->
+
+              <mat-form-field class="dateRange" appearance="fill">
+                <mat-label>Select contract date range</mat-label>
+                <mat-date-range-input
+                  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)"
+                  [rangePicker]="campaignOnePicker">
+                  <input matStartDate placeholder="Start date" formControlName="start" formControlName="startDate">
+                  <input matEndDate placeholder="End date" formControlName="end" formControlName="endDate">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+              </mat-form-field>
+              
+              
+              
+
+          </div>
+          <br>
+          <button mat-raised-button color="primary" class="submitForm" (click)="submitForm();" type="submit">submit</button>
+
+        </mat-card>
+    
+    
+
+</div>
