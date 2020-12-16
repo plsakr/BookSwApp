@@ -15,7 +15,7 @@ export class BookListingComponent implements OnInit {
   // genre: string;
   // releaseDate: Date;
   // publisher: string;
-  submitForm(customerData){
+  submitForm(customerData: any){
     // Process checkout data here
     console.log("lalala");
 
@@ -56,11 +56,11 @@ export class BookListingComponent implements OnInit {
       start: new FormControl(new Date(year, month, day)),
       end: new FormControl(new Date(year, month, day))
     })
-    
+
    }
 
   ngOnInit(): void {
   }
-  
+
 
 }
