@@ -7,6 +7,7 @@ import {CartComponent} from './components/shopping-cart/cart/cart.component';
 import {UserComponent} from './user/user.component';
 import {AuthGuardService} from './services/auth-guard.service';
 import {BookListingComponent} from './components/book-listing/book-listing.component';
+import {LibrarianPageComponent} from './components/librarian-page/librarian-page.component';
 
 const routes: Routes = [
   {path: 'login', component: RegisterUserComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
   {path: 'listing', component: BookListingComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
   {path: 'user', component: UserComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER', 'LIBRARIAN']}},
+  {path: 'librarian', component: LibrarianPageComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
   {path: '**', component: RegisterUserComponent}
 ];
 

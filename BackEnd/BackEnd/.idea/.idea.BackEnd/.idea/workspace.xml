@@ -23,30 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a71774b-a310-4b90-9a1e-125cbdcf08f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/Controllers/CartController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/Entities/Cart.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/Entities/TaggedWith.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/Entities/Librarian.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/Models/RegisterLibrarianRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/Models/WaitlistStatusReponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackEnd/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackEnd/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/BackEnd.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/BackEnd.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/BookCopyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/BookCopyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/OwnerContractController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/OwnerContractController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/BookCopy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/BookCopy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/Contains.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/Contains.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/OwnerContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/OwnerContract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/RentalContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/RentalContract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/obj/BackEnd.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/obj/BackEnd.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/obj/BackEnd.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/obj/BackEnd.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/obj/Debug/netcoreapp3.1/BackEnd.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/obj/Debug/netcoreapp3.1/BackEnd.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/book/book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/book/book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/components/book-listing/book-listing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/components/book-listing/book-listing.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/app/library/library.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/library/library.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/app/library/library.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/library/library.component.ts" afterDir="false" />
     </list>
@@ -69,7 +59,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/CartController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7AD3B931-A214-4DE8-ABE3-D039F06C7A53/20/b959a5c4/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -77,10 +71,8 @@
         <option value="$PROJECT_DIR$/BackEnd/Properties/launchSettings.json" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/01c5a1d7-1a85-48f4-af11-e06972f43f8e/console.sql" />
         <option value="$PROJECT_DIR$/BackEnd/Helpers/JwtMiddleware.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Services/AuthService.cs" />
         <option value="$PROJECT_DIR$/BackEnd/tests/loginTest.http" />
         <option value="$PROJECT_DIR$/BackEnd/Models/AuthResponse.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/Tag.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/Book.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/TaggedWith.cs" />
@@ -93,8 +85,16 @@
         <option value="$PROJECT_DIR$/BackEnd/Entities/Contains.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/OwnerContract.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/RentalContract.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Controllers/RentalContractController.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Controllers/CartController.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Models/RegisterLibrarianRequest.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Services/AuthService.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Entities/Librarian.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Models/WaitlistStatusReponse.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" />
       </list>
     </option>
   </component>
@@ -291,7 +291,7 @@
       <workItem from="1606844188040" duration="6385000" />
       <workItem from="1607449967089" duration="4225000" />
       <workItem from="1608153449220" duration="2926000" />
-      <workItem from="1608192896211" duration="12888000" />
+      <workItem from="1608192896211" duration="16928000" />
     </task>
     <task id="LOCAL-00001" summary="added basic login and registration to backend">
       <created>1606940492094</created>
@@ -300,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606940492094</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added more to backend and frontend :D">
+      <created>1608216409850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608216409850</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,35 +330,36 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added basic login and registration to backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="added basic login and registration to backend" />
+    <MESSAGE value="added more to backend and frontend :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more to backend and frontend :D" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606845560286">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1606845560286" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608214612465">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608219338581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608214612465" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608219338581" />
     <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1607461665229" />
     <state width="1238" height="291" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1607461414149" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608214612465">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608219338581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608214612465" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608219338581" />
     <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1607461665228" />
     <state width="1238" height="291" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1607461414124" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608214612465">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608219338581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608214612465" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608219338581" />
     <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1607461665226" />
     <state width="1238" height="291" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1607461414111" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608214612465">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608219338581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608214612465" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608219338581" />
     <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1607461665229" />
     <state width="1238" height="291" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1607461414137" />
     <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1608198574682">
@@ -454,6 +462,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="231" key="RollbackChangesDialog/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608192780528" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1608216420365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608216420365" />
     <state x="540" y="175" key="com.intellij.database.dbimport.ImportDialog" timestamp="1608193696814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -476,13 +488,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackEnd/Controllers/BookController.cs</url>
-          <line>60</line>
+          <line>64</line>
           <properties documentPath="C:\Users\peter\Desktop\DB Proj\BookSwApp\BackEnd\BackEnd\BackEnd\Controllers\BookController.cs" initialLine="59">
             <startOffsets>
-              <option value="1779" />
+              <option value="1937" />
             </startOffsets>
             <endOffsets>
-              <option value="1810" />
+              <option value="1968" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

@@ -38,10 +38,15 @@
       <mat-form-field  [class.mat-elevation-z1]="true">
         <mat-label>Search</mat-label>
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput type="text" [(ngModel)]="value">
-        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <input matInput type="text" [(ngModel)]="value" (change)="onSearch()">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
           <mat-icon>close</mat-icon>
         </button>
+<!--        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">-->
+<!--          <mat-option *ngFor="let option of sortedData" [value]="option">-->
+<!--            {{option.name}}-->
+<!--          </mat-option>-->
+<!--        </mat-autocomplete>-->
       </mat-form-field>
   </div>
 

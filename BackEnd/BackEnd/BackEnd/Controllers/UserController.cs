@@ -8,12 +8,9 @@ using BackEnd.Entities;
 using BackEnd.Helpers;
 using BackEnd.Models;
 using BackEnd.Services;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Net.Http.Headers;
-using Org.BouncyCastle.Bcpg;
 using SameSiteMode = Microsoft.AspNetCore.Http.SameSiteMode;
 
 namespace BackEnd.Controllers
@@ -45,7 +42,7 @@ namespace BackEnd.Controllers
             option.SameSite = SameSiteMode.Lax;
             Response.Cookies.Append("session", result.token, option);
             
-            return new AuthResponse {Id = result.userId.GetValueOrDefault(), Role = "USER"};
+            return new AuthResponse {Id = result.userId.GetValueOrDefault(), Role = result.role};
         }
         
         [HttpGet("logout")]
@@ -74,6 +71,21 @@ namespace BackEnd.Controllers
             Response.Cookies.Append("session", result, option);
             return Ok();
         }
+        
+        [HttpPost("registerLibrarian")]
+        public async Task<IActionResult> RegisterLibrarian(RegisterLibrarianRequest request)
+        {
+            var result = await _auth.RegisterLibrarian(request);
+
+            if (result == null)
+                return BadRequest(new {message = "User with given email exists!"});
+            
+            var option = new CookieOptions();
+            option.Expires = DateTime.Now.AddDays(1);
+            option.HttpOnly = true;
+            Response.Cookies.Append("session", result, option);
+            return Ok();
+        }
 
         [AuthorizeUser]
         [HttpGet("test")]
@@ -90,6 +102,7 @@ namespace BackEnd.Controllers
             
             return Ok(HttpContext.Items["Email"]);
         }
+        [AuthorizeUser]
         [HttpGet("transactionHistory")]
         public async Task<List<RentalContract>> userTransactionHistory()
         {

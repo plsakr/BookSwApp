@@ -18,6 +18,7 @@
           <e p="OwnerContractController.cs" t="Include" />
           <e p="RentalContractController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
+          <e p="WaitlistController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
@@ -25,10 +26,13 @@
           <e p="BookCopy.cs" t="Include" />
           <e p="Cart.cs" t="Include" />
           <e p="Contains.cs" t="Include" />
+          <e p="Librarian.cs" t="Include" />
           <e p="OwnerContract.cs" t="Include" />
           <e p="RentalContract.cs" t="Include" />
           <e p="TaggedWith.cs" t="Include" />
           <e p="User.cs" t="Include" />
+          <e p="Waiting.cs" t="Include" />
+          <e p="Waitlist.cs" t="Include" />
         </e>
         <e p="Helpers" t="Include">
           <e p="AuthorizeAttribute.cs" t="Include" />
@@ -41,8 +45,11 @@
           <e p="BookCopyRequest.cs" t="Include" />
           <e p="DbAppContext.cs" t="Include" />
           <e p="LoginRequest.cs" t="Include" />
+          <e p="RegisterLibrarianRequest.cs" t="Include" />
           <e p="RegisterRequest.cs" t="Include" />
           <e p="RentBookRequest.cs" t="Include" />
+          <e p="WaitlistStatusReponse.cs" t="Include" />
+          <e p="WaitOnBookRequest.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

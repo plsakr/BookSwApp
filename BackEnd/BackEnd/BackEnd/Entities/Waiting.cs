@@ -7,6 +7,7 @@ namespace BackEnd.Entities
     {
         public int UserID { get; set; }
         public int WaitlistID { get; set; }
+        public DateTime EntryTime { get; set; }
 
         public Waiting(int userId, int waitlistId)
         {
