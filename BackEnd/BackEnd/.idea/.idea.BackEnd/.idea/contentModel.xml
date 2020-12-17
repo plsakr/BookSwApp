@@ -15,6 +15,7 @@
           <e p="BookController.cs" t="Include" />
           <e p="BookCopyController.cs" t="Include" />
           <e p="CartController.cs" t="Include" />
+          <e p="LibrarianController.cs" t="Include" />
           <e p="OwnerContractController.cs" t="Include" />
           <e p="RentalContractController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onCheckout(): void {
+    this.http.get('http://localhost:5000/RentalContract/checkout', {withCredentials: true}).subscribe(h => {
+      this.router.navigate(['/']);
+    });
+
   }
 
 }

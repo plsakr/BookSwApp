@@ -5,7 +5,7 @@ namespace BackEnd.Entities
 {
     public class RentalContract
     {
-        public int? RentalContractID { get; set; }
+        public int? ContractID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int UserID { get; set; }
@@ -13,7 +13,7 @@ namespace BackEnd.Entities
 
         public RentalContract(int userID, DateTime endDate)
         {
-            RentalContractID = null;
+            ContractID = null;
             StartDate = DateTime.Today;
             EndDate = endDate;
             UserID = userID;

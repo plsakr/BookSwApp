@@ -34,8 +34,8 @@ namespace BackEnd.Models
             modelBuilder.Entity<BookCopy>().ToTable("BOOK_COPY").HasKey(x => new {x.CopyID});
             modelBuilder.Entity<TaggedWith>().ToTable("IS_TAGGED_WITH").HasKey(x => new {x.BookISBN, x.TagName});
             modelBuilder.Entity<OwnerContract>().ToTable("OWNER_CONTRACT").HasKey(x => x.ContractID);
-            modelBuilder.Entity<RentalContract>().ToTable("RENTAL_CONTRACT").HasKey(x => x.RentalContractID);
-            modelBuilder.Entity<Contains>().ToTable("CONTAINS").HasKey(x => new {x.RentalContractID, x.BookCopyID});
+            modelBuilder.Entity<RentalContract>().ToTable("RENTAL_CONTRACT").HasKey(x => x.ContractID);
+            modelBuilder.Entity<Contains>().ToTable("CONTAINS").HasKey(x => new {RentalContractID = x.Rental_ContractcontractID, x.Book_CopycopyID});
             modelBuilder.Entity<Cart>().ToTable("CART").HasKey(x => new {x.UserId,x.BookCopyId});
             modelBuilder.Entity<Waitlist>().ToTable("WAITLIST").HasKey(x => x.WaitlistID);
             modelBuilder.Entity<Waiting>().ToTable("IS_WAITING").HasKey(x => new {x.UserID, x.WaitlistID});

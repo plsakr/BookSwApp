@@ -119,10 +119,10 @@ namespace BackEnd.Controllers
             
             foreach ( RentalContract r in rentals)
             {
-                int rentalContractId = r.RentalContractID ?? default(int);
-                var contract = await _context.RentalContracts.FirstAsync(x => x.RentalContractID == rentalContractId);
-                var wContains = await _context.Contain.FirstAsync(x => x.RentalContractID == rentalContractId);
-                var bookCopyID = wContains.BookCopyID;
+                int rentalContractId = r.ContractID ?? default(int);
+                var contract = await _context.RentalContracts.FirstAsync(x => x.ContractID == rentalContractId);
+                var wContains = await _context.Contain.FirstAsync(x => x.Rental_ContractcontractID == rentalContractId);
+                var bookCopyID = wContains.Book_CopycopyID;
                 var bookcopy = await _context.BookCopies.FirstAsync(x => x.CopyID == bookCopyID);
                 var bookISBN = bookcopy.ISBN;
                 var bookOr = await _context.Books.FirstAsync(x => x.ISBN == bookISBN);
