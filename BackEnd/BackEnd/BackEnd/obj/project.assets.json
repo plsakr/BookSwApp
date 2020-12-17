@@ -5079,19 +5079,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/peter/.nuget/packages/": {}
+    "/Users/melissachehade/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj",
+      "projectUniqueName": "/Users/melissachehade/Desktop/db git/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj",
-      "packagesPath": "/Users/peter/.nuget/packages/",
-      "outputPath": "/Users/peter/WebstormProjects/BookSwApp/BackEnd/BackEnd/BackEnd/obj/",
+      "projectPath": "/Users/melissachehade/Desktop/db git/BookSwApp/BackEnd/BackEnd/BackEnd/BackEnd.csproj",
+      "packagesPath": "/Users/melissachehade/.nuget/packages/",
+      "outputPath": "/Users/melissachehade/Desktop/db git/BookSwApp/BackEnd/BackEnd/BackEnd/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/peter/.nuget/NuGet/NuGet.Config"
+        "/Users/melissachehade/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5101,6 +5101,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5112,6 +5113,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5164,6 +5166,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5172,7 +5184,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/melissachehade/.dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }
