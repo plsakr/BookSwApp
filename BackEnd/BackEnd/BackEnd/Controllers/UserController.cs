@@ -104,7 +104,7 @@ namespace BackEnd.Controllers
         }
         [AuthorizeUser]
         [HttpGet("transactionHistory")]
-        public async Task<List<RentalContract>> userTransactionHistory()
+        public async Task<List<TransactionList>> userTransactionHistory()
         {
             //1-get user email:
             var email = HttpContext.Items["Email"] as string;
@@ -114,7 +114,33 @@ namespace BackEnd.Controllers
             var userId = user.UserId;
             //4- search for the list of rental contracts saved with this id
             var rentals = _context.RentalContracts.Include(x => x.UserID == userId).ToList();
-            return rentals;
+            List<TransactionList> listTr = new List<TransactionList>();
+            
+            
+            foreach ( RentalContract r in rentals)
+            {
+                int rentalContractId = r.RentalContractID ?? default(int);
+                var contract = await _context.RentalContracts.FirstAsync(x => x.RentalContractID == rentalContractId);
+                var wContains = await _context.Contain.FirstAsync(x => x.RentalContractID == rentalContractId);
+                var bookCopyID = wContains.BookCopyID;
+                var bookcopy = await _context.BookCopies.FirstAsync(x => x.CopyID == bookCopyID);
+                var bookISBN = bookcopy.ISBN;
+                var bookOr = await _context.Books.FirstAsync(x => x.ISBN == bookISBN);
+                var bookName = bookOr.Name;
+                var ownerContractID = bookcopy.OwnerContractID;
+                var ownerContractDetail = await _context.OwnerContracts.FirstAsync(x => x.OwnerContractID == ownerContractID);
+                var branch = ownerContractDetail.BranchID;
+                var branches = await _context.Branches.FirstAsync(x => x.BranchID == branch);
+                var branchName = branches.Name;
+                var startDate = r.StartDate;
+                var endDate = r.EndDate;
+                
+                var transaction0 = new TransactionList(rentalContractId, bookName, startDate, endDate, branchName);
+                listTr.Add(transaction0);
+                
+            }
+
+            return listTr;
 
 
 

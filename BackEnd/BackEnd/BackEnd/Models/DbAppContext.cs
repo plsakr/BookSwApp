@@ -7,7 +7,7 @@ namespace BackEnd.Models
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
-        public DbSet<BookCopy> BookCopies { get; set; }
+        public DBSet<BookCopy> BookCopies { get; set; }
         public DbSet<OwnerContract> OwnerContracts { get; set; }
         public DbSet<RentalContract> RentalContracts { get; set; }
         public DbSet<Contains> Contain { get; set; }
@@ -15,6 +15,7 @@ namespace BackEnd.Models
         public DbSet<Waiting> WaitingPeople { get; set; }
         public DbSet<TaggedWith> Tags { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<Branch> Branches { get; set; }
         public DbSet<Librarian> Librarians { get; set; }
 
         public DbAppContext(DbContextOptions<DbAppContext> options): base(options)
@@ -36,8 +37,9 @@ namespace BackEnd.Models
             modelBuilder.Entity<RentalContract>().ToTable("RENTAL_CONTRACT").HasKey(x => x.RentalContractID);
             modelBuilder.Entity<Contains>().ToTable("CONTAINS").HasKey(x => new {x.RentalContractID, x.BookCopyID});
             modelBuilder.Entity<Cart>().ToTable("CART").HasKey(x => new {x.UserId,x.BookCopyId});
-            modelBuilder.Entity<Waitlist>().ToTable("WAITLIST");
-            modelBuilder.Entity<Waiting>().ToTable("IS_WAITING");
+            modelBuilder.Entity<Waitlist>.ToTable("WAITLIST");
+            modelBuilder.Entity<Waiting>.ToTable("IS_WAITING");
+            modelBuilder.Entity<Branch>.ToTable("BRANCH");
             modelBuilder.Entity<Librarian>().ToTable("LIBRARIAN").HasKey(x => x.StaffID);
         }
     }
