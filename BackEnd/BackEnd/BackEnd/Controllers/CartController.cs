@@ -30,6 +30,12 @@ namespace BackEnd.Controllers
             if (!copy.IsAvailable)
                 return BadRequest();
 
+            var waitlist = await _context.Waitlists.FirstAsync(x => x.ISBN == copy.ISBN);
+            var peopleWaiting = _context.WaitingPeople.Where(x => x.WaitlistListID == waitlist.ListID).ToList();
+            
+            if (peopleWaiting.Count > 0)
+                return BadRequest();
+            
             copy.IsAvailable = false;
             _context.BookCopies.Update(copy);
             var userEmail = HttpContext.Items["Email"] as string;
@@ -92,7 +98,7 @@ namespace BackEnd.Controllers
         }
 
         [AuthorizeUser]
-        [HttpPost("towaitlist")]
+        [HttpGet("towaitlist")]
         public async Task<IActionResult> AddToWaitlist(string ISBN)
         {
             //check if waitlist exists; if not: create a new one for the associated book
@@ -110,10 +116,10 @@ namespace BackEnd.Controllers
             var userId = _context.Users.FirstAsync(x => x.Email == userEmail).Id;
             var checkExists =
                 _context.WaitingPeople.FirstOrDefault(
-                    x => x.UserID == userId && x.WaitlistID == bookWaitlist.WaitlistID);
+                    x => x.UserUserID == userId && x.WaitlistListID == bookWaitlist.ListID);
             if (checkExists == null)
             {
-                var waitingList = new Waiting(userId, bookWaitlist.WaitlistID ?? default(int));
+                var waitingList = new Waiting(userId, bookWaitlist.ListID ?? default(int));
                 _context.WaitingPeople.Add(waitingList);
                 _context.SaveChanges();
             }

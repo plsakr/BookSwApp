@@ -5,13 +5,13 @@ namespace BackEnd.Entities
 {
     public class Waitlist
     {
-        public int? WaitlistID { get; set; }
+        public int? ListID { get; set; }
         public string ISBN { get; set; }
 
         public Waitlist(string ISBN)
         {
             this.ISBN = ISBN;
-            WaitlistID  = null;
+            ListID  = null;
         }
 
     }

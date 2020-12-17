@@ -22,14 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a71774b-a310-4b90-9a1e-125cbdcf08f1" name="Default Changelist" comment="peters changes">
+    <list default="true" id="5a71774b-a310-4b90-9a1e-125cbdcf08f1" name="Default Changelist" comment="fixed small bugs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/RentalContractController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/RentalContractController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/RentalContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/RentalContract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/CartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Entities/Waitlist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Entities/Waitlist.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Models/RentBookRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Models/RentBookRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/components/shopping-cart/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/components/shopping-cart/product-list/product-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/user/user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/app/user/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/app/user/user.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +53,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/CartController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/LibrarianController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7AD3B931-A214-4DE8-ABE3-D039F06C7A53/20/b959a5c4/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Models/DbAppContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/LibrarianController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BackEnd/Helpers/AddBookRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Models/DbAppContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9CD23B5E-3B0C-4F80-A807-33BCFD1D82E1/262/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/peter/Desktop/DB Proj/BookSwApp/BackEnd/BackEnd/BackEnd/Controllers/LibrarianController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -79,9 +83,6 @@
         <option value="$PROJECT_DIR$/BackEnd/Services/AuthService.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/Librarian.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Models/WaitlistStatusReponse.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Entities/Waitlist.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Models/AddBookCopyRequest.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Controllers/OwnerContractController.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5519dda1-0509-4fb1-8b39-d38cecb66343/console_1.sql" />
@@ -91,13 +92,17 @@
         <option value="$PROJECT_DIR$/BackEnd/Models/WaitOnBookRequest.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Controllers/BookCopyController.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Models/CartItemResponse.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/Branch.cs" />
-        <option value="$PROJECT_DIR$/BackEnd/Controllers/CartController.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Models/RentBookRequest.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Controllers/RentalContractController.cs" />
         <option value="$PROJECT_DIR$/BackEnd/Entities/RentalContract.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Controllers/LibrarianController.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Controllers/CartController.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Models/DbAppContext.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Entities/Waitlist.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Entities/Waiting.cs" />
+        <option value="$PROJECT_DIR$/BackEnd/Controllers/WaitlistController.cs" />
       </list>
     </option>
   </component>
@@ -324,7 +329,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608237207141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="cart and checkout work">
+      <created>1608240275018</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608240275018</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed small bugs">
+      <created>1608244246158</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608244246158</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +369,9 @@
     <MESSAGE value="added more to backend and frontend :D" />
     <MESSAGE value="finished search, added wailist status, and librarian login" />
     <MESSAGE value="peters changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="peters changes" />
+    <MESSAGE value="cart and checkout work" />
+    <MESSAGE value="fixed small bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed small bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606845560286">
@@ -361,28 +382,32 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="446" height="464" key="DebuggerActiveHint/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608236825103" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608238698682">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1608243727044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608238698682" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608243727043" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608247419903">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608247419903" />
     <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1607461665229" />
     <state width="1238" height="291" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1607461414149" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608238698682">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608247419903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608238698682" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608247419903" />
     <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1607461665228" />
     <state width="1238" height="291" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1607461414124" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608238698681">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608247419903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608238698681" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608247419903" />
     <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1607461665226" />
     <state width="1238" height="291" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1607461414111" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608238698682">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608247419903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608238698682" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608247419903" />
     <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1607461665229" />
     <state width="1238" height="291" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1607461414137" />
     <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1608238695452">
@@ -485,10 +510,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="231" key="RollbackChangesDialog/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608192780528" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1608237208848">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1608244256505">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608237208848" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608244256505" />
     <state x="766" y="397" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1608231426531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -501,6 +526,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="818" y="258" width="651" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608215962757" />
+    <state x="638" y="253" width="644" height="534" key="find.popup" timestamp="1608247382533">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="638" y="253" width="644" height="534" key="find.popup/-1920.-87.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1608247382533" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1608196934090">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -516,13 +545,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackEnd/Controllers/CartController.cs</url>
-          <line>47</line>
+          <line>53</line>
           <properties documentPath="C:\Users\peter\Desktop\DB Proj\BookSwApp\BackEnd\BackEnd\BackEnd\Controllers\CartController.cs" initialLine="46">
             <startOffsets>
-              <option value="1393" />
+              <option value="1700" />
             </startOffsets>
             <endOffsets>
-              <option value="1446" />
+              <option value="1753" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />

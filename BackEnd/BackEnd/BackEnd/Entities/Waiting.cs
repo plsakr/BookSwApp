@@ -5,14 +5,15 @@ namespace BackEnd.Entities
 {
     public class Waiting
     {
-        public int UserID { get; set; }
-        public int WaitlistID { get; set; }
-        public DateTime EntryTime { get; set; }
+        public int UserUserID { get; set; }
+        public int WaitlistListID { get; set; }
+        public DateTime EntryDate { get; set; }
 
-        public Waiting(int userID, int waitlistID)
+        public Waiting(int userUserID, int waitlistListID)
         {
-            UserID = userID;
-            WaitlistID = waitlistID;
+            UserUserID = userUserID;
+            WaitlistListID = waitlistListID;
         }
+        
     }
 }
