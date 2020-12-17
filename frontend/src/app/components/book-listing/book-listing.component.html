@@ -4,10 +4,21 @@
     <mat-card class="CardDisplayArea">
         <mat-card-title style="text-align:center;">Create A Book Listing!</mat-card-title>
         <div class="example-container">
+          <span class="leftInput">
             <mat-form-field appearance="fill" [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value)">
               <mat-label>ISBN</mat-label>
               <input matInput placeholder="Please enter the book ISBN" formControlName="ISBN" (change)="onISBNChange()">
             </mat-form-field>
+            </span>
+            <span class="rightInput">
+              <mat-form-field   appearance="fill" [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value)">
+                <mat-label>Select Branch</mat-label>
+                <mat-select formControlName="branchName">
+                  <mat-option value="option">Byblos</mat-option>
+                  <mat-option value="option">Beirut</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </span>
             <!-- <img src="./../../ISBN_notFound.jpg" class="unknownBookImage" *ngIf="true"/> -->
             <br><br>
             <div class="ISBN-isFound" *ngIf="isFound">

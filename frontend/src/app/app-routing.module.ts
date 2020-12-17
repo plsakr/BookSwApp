@@ -11,12 +11,12 @@ import {LibrarianPageComponent} from './components/librarian-page/librarian-page
 
 const routes: Routes = [
   {path: 'login', component: RegisterUserComponent},
-  {path: 'library', component: LibraryComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
-  {path: 'book', component: BookComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
-  {path: 'cart', component: CartComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
-  {path: 'listing', component: BookListingComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
-  {path: 'user', component: UserComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER', 'LIBRARIAN']}},
-  {path: 'librarian', component: LibrarianPageComponent, canActivate: [AuthGuardService], data: {expectedRoles: ['USER']}},
+  {path: 'library', component: LibraryComponent, data: {expectedRoles: ['USER']}},
+  {path: 'book', component: BookComponent,  data: {expectedRoles: ['USER']}},
+  {path: 'cart', component: CartComponent, data: {expectedRoles: ['USER']}},
+  {path: 'listing', component: BookListingComponent, data: {expectedRoles: ['USER']}},
+  {path: 'user', component: UserComponent, data: {expectedRoles: ['USER', 'LIBRARIAN']}},
+  {path: 'librarian', component: LibrarianPageComponent, data: {expectedRoles: ['USER']}},
   {path: '**', component: RegisterUserComponent}
 ];
 

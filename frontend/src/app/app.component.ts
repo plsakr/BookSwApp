@@ -23,4 +23,10 @@ export class AppComponent {
       }
     });
   }
+  user(): void {
+    this.router.navigate(['user']);
+  }
+  checkout(): void {
+    console.log('checkout');
+  }
 }

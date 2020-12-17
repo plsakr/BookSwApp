@@ -24,6 +24,16 @@ type RegisterRequest = {
   }
 };
 
+type RegisterLibrarianRequest = {
+  name: string,
+  email: string,
+  password: {
+    password: string,
+    repassword: string
+  }
+  branch: string,
+};
+
 // tells the 'confirm password' field when to update its status
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -40,6 +50,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit, OnDestroy {
+  options: string[] = ['Jbeil', 'Beirut'];
   subscription$: Subscription = new Subscription();
   loginForm = this.fb.group({
     email: ['', [Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -54,6 +65,12 @@ export class RegisterUserComponent implements OnInit, OnDestroy {
     name: ['', Validators.required],
     email: ['', [Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
     password: this.passCheckGroup,
+  });
+  registerLibrarianForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+    password: this.passCheckGroup,
+    branch: ['', Validators.required],
   });
   passMatcher = new MyErrorStateMatcher();
 
@@ -93,6 +110,13 @@ export class RegisterUserComponent implements OnInit, OnDestroy {
   onRegister(): void {
     if (this.registerForm.valid) {
       const data = this.registerForm.getRawValue() as RegisterRequest;
+      console.log(data);
+      this.getAuth().register(data.name, data.password.password, data.email);
+    }
+  }
+  onLibrarianRegister(): void {
+    if (this.registerLibrarianForm.valid) {
+      const data = this.registerLibrarianForm.getRawValue() as RegisterRequest;
       console.log(data);
       this.getAuth().register(data.name, data.password.password, data.email);
     }

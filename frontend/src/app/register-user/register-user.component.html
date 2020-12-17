@@ -124,6 +124,95 @@
             </form>
           </mat-card-content>
         </mat-tab>
+
+        <mat-tab label="Librarian Sign Up">
+          <mat-card-content>
+            <form action="" [formGroup]="registerLibrarianForm">
+              <mat-form-field appearance="fill">
+                <mat-label>Select Branch</mat-label>
+                <mat-select formControlName="branch">
+
+                  <mat-option value="option"*ngFor="let option of options">{{option}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Name"
+                  required
+                  name="name"
+                  formControlName="name"
+                >
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="registerLibrarianForm.controls['name'].invalid">
+                  Username is required
+                </mat-error>
+
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Email"
+                  required
+                  name="email"
+                  formControlName="email">
+                <mat-error *ngIf="registerLibrarianForm.controls['email'].invalid && registerLibrarianForm.controls['email'].hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="registerLibrarianForm.controls['email'].invalid && registerLibrarianForm.controls['email'].hasError('pattern')">Email is invalid</mat-error>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <form [formGroup]="passCheckGroup">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Password"
+                    type="password"
+                    required
+                    minlength="6"
+                    name="password"
+                    formControlName="password">
+                  <mat-error
+                    *ngIf="registerLibrarianForm.controls['password'].invalid && registerLibrarianForm.controls['password'].hasError('required')">
+                    Password is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="registerLibrarianForm.controls['password'].invalid && registerLibrarianForm.controls['password'].hasError('minlength')">
+                    Password must be of length 6
+                  </mat-error>
+                  <mat-icon matSuffix>lock</mat-icon>
+
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Password"
+                    type="password"
+                    required
+                    minlength="6"
+                    name="repassword"
+                    formControlName="repassword" [errorStateMatcher]="passMatcher">
+                  <mat-error
+                    *ngIf="passCheckGroup.controls['repassword'].invalid && passCheckGroup.controls['repassword'].hasError('required')">
+                    Please re-enter password
+                  </mat-error>
+                  <mat-error
+                    *ngIf="passCheckGroup.invalid && passCheckGroup.hasError('notSame')">
+                    Passwords do not match
+                  </mat-error>
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+              </form>
+
+              <button
+                mat-raised-button
+                color="primary"
+                class="login-button" [disabled]="!registerLibrarianForm.valid" (click)="onLibrarianRegister()">
+                Sign Up
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+
       </mat-tab-group>
     </mat-card>
   </div>

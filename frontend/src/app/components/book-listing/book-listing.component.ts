@@ -35,6 +35,7 @@ export class BookListingComponent implements OnInit {
   genre = '';
   date = '';
   publisher = '';
+  branch = '';
   // ISBN: number;
   // bookName: string;
   // authorName: string;
@@ -50,12 +51,13 @@ export class BookListingComponent implements OnInit {
       const post = {
         Isbn: this.checkoutForm.controls.ISBN.value,
         EndDate: this.checkoutForm.controls.endDate.value,
-        branchID: 1,
+        // tslint:disable-next-line:triple-equals
+        branchID: (this.checkoutForm.controls.branchName.value === 'Byblos' ? 1 : 2),
         Name: this.checkoutForm.controls.bookName.value,
         Author: this.checkoutForm.controls.authorName.value,
         Genre: this.checkoutForm.controls.genre.value,
         ReleaseDate: this.checkoutForm.controls.releaseDate.value,
-        Publisher: this.checkoutForm.controls.publisher.value
+        Publisher: this.checkoutForm.controls.publisher.value,
       };
       this.http.post(`http://localhost:5000/OwnerContract/addBookCopy`, post, {withCredentials: true}).subscribe(h => {
         this.checkoutForm.reset();
@@ -65,7 +67,7 @@ export class BookListingComponent implements OnInit {
       const post = {
         Isbn: this.checkoutForm.controls.ISBN.value,
         EndDate: this.checkoutForm.controls.endDate.value,
-        branchID: 1,
+        branchID: (this.checkoutForm.controls.branchName.value === 'Byblos' ? 1 : 2),
         Name: this.name,
         Author: this.author,
         Genre: this.genre,
@@ -97,6 +99,7 @@ export class BookListingComponent implements OnInit {
       publisher: '',
       startDate: undefined,
       endDate: undefined,
+      branchName: undefined,
     });
     const today = new Date();
     const month = today.getMonth();
