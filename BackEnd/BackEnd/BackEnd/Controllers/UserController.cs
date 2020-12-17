@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -87,6 +89,25 @@ namespace BackEnd.Controllers
             }
             
             return Ok(HttpContext.Items["Email"]);
+        }
+        [HttpGet("transactionHistory")]
+        public async Task<List<RentalContract>> userTransactionHistory()
+        {
+            //1-get user email:
+            var email = HttpContext.Items["Email"] as string;
+            //2-search for users that have this email in the db
+            var user = await _context.Users.FirstAsync(x => x.Email == email);
+            //3- get the user id
+            var userId = user.UserId;
+            //4- search for the list of rental contracts saved with this id
+            var rentals = _context.RentalContracts.Include(x => x.UserID == userId).ToList();
+            return rentals;
+
+
+
+
+
+
         }
         
     }
