@@ -6,14 +6,14 @@ namespace BackEnd.Entities
     public class Contains
     {
         public int RentalContractID { get; set; }
-        public int BookCopyId { get; set; }
+        public int BookCopyID { get; set; }
 
 
 
-        public Contains(int rentalContractId, int bookCopyId)
+        public Contains(int rentalContractID, int bookCopyID)
         {
-            RentalContractID = rentalContractId;
-            BookCopyId = bookCopyId;
+            RentalContractID = rentalContractID;
+            BookCopyID = bookCopyID;
         }
     }
 }

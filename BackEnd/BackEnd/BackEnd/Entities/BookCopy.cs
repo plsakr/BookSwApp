@@ -14,17 +14,17 @@ namespace BackEnd.Entities
 
     
 
-        public BookCopy(string currentState, bool isAvailable, string Isbn, int shelfID, int ownerContractId)
+        public BookCopy(string currentState, bool isAvailable, string ISBN, int shelfID, int ownerContractID)
         {
             CopyID = null;
             CurrentState = currentState;
             IsAvailable = isAvailable;
-            ISBN = Isbn;
+            this.ISBN = ISBN;
             ShelfID = shelfID;
-            OwnerContractID = ownerContractId;
+            OwnerContractID = ownerContractID;
         }
 
-        
+
     }
 
 }

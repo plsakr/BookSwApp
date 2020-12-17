@@ -14,13 +14,13 @@ namespace BackEnd.Entities
         public string ISBN { get; set; }
 
 
-        public OwnerContract(int userID, string isbn, int branchId, DateTime endDate)
+        public OwnerContract(int userID, string ISBN, int branchID, DateTime endDate)
         {
             StartDate = DateTime.Today;
             EndDate = endDate;
-            BranchID = branchId;
+            BranchID = branchID;
             UserID = userID;
-            ISBN = isbn;
+            this.ISBN = ISBN;
 
         }
 

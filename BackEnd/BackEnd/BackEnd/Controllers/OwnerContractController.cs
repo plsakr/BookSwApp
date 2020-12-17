@@ -62,7 +62,7 @@ namespace BackEnd.Controllers
             _context.OwnerContracts.Add(ownerContract);
             _context.SaveChanges();
             int id = ownerContract.OwnerContractID ?? default (int);
-            var bookCopyNew = new BookCopy(currentState: av , isAvailable: true, Isbn: request.Isbn, shelfID: 0, ownerContractId: id);
+            var bookCopyNew = new BookCopy(currentState: av , isAvailable: true, ISBN: request.Isbn, shelfID: 0, ownerContractID: id);
             _context.BookCopies.Add(bookCopyNew);
             _context.SaveChanges();
             

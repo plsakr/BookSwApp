@@ -2,22 +2,21 @@
     <div class="sidebar-content">
       <mat-form-field appearance="outline">
         <mat-label>Genre</mat-label>
-        <mat-select value="All">
+        <mat-select value="All" [(ngModel)]="selectedGenre" (selectionChange)="genreChange($event)">
           <mat-option *ngFor="let g of genres" [value]="g">{{g}}</mat-option>
         </mat-select>
       </mat-form-field>
 
     <p>Sort by:</p>
-      <mat-radio-group value="name" class="radios">
+      <mat-radio-group value="name" class="radios" (change)="radioChange($event)">
         <mat-radio-button value="name">Name</mat-radio-button>
         <mat-radio-button value="author">Author</mat-radio-button>
-        <mat-radio-button value="pop">Popularity</mat-radio-button>
         <mat-radio-button value="year">Year Published</mat-radio-button>
       </mat-radio-group>
 
-      <mat-form-field class="my-tags">
+      <mat-form-field class="my-tags" >
         <mat-label>Tags</mat-label>
-        <mat-select [formControl]="tagsControl" multiple>
+        <mat-select [formControl]="tagsControl" multiple [(ngModel)]="selectedTags" (selectionChange)="tagChange($event)">
           <mat-select-trigger>
             <mat-chip-list>
               <mat-chip  *ngFor="let tag of tagsControl.value" [removable]="true" (removed)="onTagRemoved(tag)">
@@ -25,7 +24,7 @@
                 <mat-icon matChipRemove>cancel</mat-icon>
               </mat-chip>
             </mat-chip-list>
-          </mat-select-trigger>
+          </mat-select-trigger >
           <mat-option *ngFor="let tag of availableTags" [value]="tag">{{tag}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -53,15 +52,15 @@
     <div fxLayout="row wrap" fxLayoutGap="10px grid">
       <div [fxFlex]="(100/gridColumns)+'%'" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let i of currentData; let bi=index;">
         <mat-card class="book">
-          <img mat-card-image [src]="i.image" class="book-image"/>
+<!--          <img mat-card-image [src]="i.image" class="book-image"/>-->
           <mat-card-content>
-            <h4>{{i.title}}</h4>
+            <h4>{{i.name}}</h4>
             <h4>{{i.author}}</h4>
           </mat-card-content>
           <mat-card-actions>
             <div class="my-buttons">
 
-            <button mat-button>View</button>
+            <button mat-button (click)="onBookView(i.isbn)">View</button>
               <button mat-icon-button><mat-icon>add_shopping_cart</mat-icon></button>
 
             </div>

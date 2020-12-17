@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace BackEnd.Entities
@@ -11,12 +12,14 @@ namespace BackEnd.Entities
         public string Genre { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Publisher { get; set; }
+        
+        public ICollection<TaggedWith> Tags { get; set; }
 
     
 
-    public Book(string Isbn, string name, string author, string genre, DateTime releaseDate, string publisher)
+    public Book(string ISBN, string name, string author, string genre, DateTime releaseDate, string publisher)
     {
-        ISBN = Isbn;
+        this.ISBN = ISBN;
         Name = name;
         Author = author;
         Genre = genre;

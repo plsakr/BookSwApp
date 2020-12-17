@@ -48,15 +48,16 @@ namespace BackEnd.Controllers
             return Ok();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("byId")]
         public ActionResult<Book> GetById(string id)
         {
-            return _context.Books.FirstOrDefault(x=> x.ISBN == id);
+            return _context.Books.Include(x => x.Tags).FirstOrDefault(x=> x.ISBN == id);
         }
         
-        [HttpGet("{id}")]
+        [HttpGet("")]
         public List<Book> GetAll()
         {
+            var books = _context.Books.Include(x => x.Tags).ToList();
             return _context.Books.ToList();
         }
         

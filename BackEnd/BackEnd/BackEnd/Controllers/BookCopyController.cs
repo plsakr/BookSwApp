@@ -36,10 +36,10 @@ namespace BackEnd.Controllers
         }
 
 
-        [HttpGet("{id}")]
-        public ActionResult<BookCopy> GetById(string id, string isAv)
+        [HttpGet("byId")]
+        public ActionResult<List<BookCopy>> GetById(string id)
         {
-            return _context.BookCopies.Where(x=> x.ISBN == id && x.IsAvailable == isAv ).ToList();
+            return _context.BookCopies.Where(x=> x.ISBN == id && x.IsAvailable ).ToList();
         }
         
         

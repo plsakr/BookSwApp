@@ -11,12 +11,12 @@ namespace BackEnd.Entities
         public int UserID { get; set; }
 
 
-        public RentalContract(int userId, DateTime endDate)
+        public RentalContract(int userID, DateTime endDate)
         {
             RentalContractID = null;
             StartDate = DateTime.Today;
             EndDate = endDate;
-            UserID = userId;
+            UserID = userID;
         }
     }
 }
