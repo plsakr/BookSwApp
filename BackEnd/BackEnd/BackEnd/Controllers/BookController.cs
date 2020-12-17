@@ -44,6 +44,10 @@ namespace BackEnd.Controllers
             var book_new = new Book(request.Isbn, request.Name, request.Author, request.Genre, request.ReleaseDate, request.Publisher);
             _context.Books.Add(book_new);
             _context.SaveChanges();
+            
+            var new_waitlist = new Waitlist(request.Isbn);
+            _context.Waitlists.Add(new_waitlist);
+            _context.SaveChanges();
 
             return Ok();
         }

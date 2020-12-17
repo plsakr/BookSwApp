@@ -40,6 +40,11 @@ namespace BackEnd.Controllers
             return _context.BookCopies.Where(x=> x.ISBN == id && x.IsAvailable == true ).ToList();
         }
         
+        public Book GetByISBN(string id)
+        {
+            return _context.Books.FirstOrDefault(x=> x.ISBN == id  );
+        }
+        
         
         [HttpPost("rentBookCopy")]
         public async Task<IActionResult> RentBookCopy(RentBookCopyRequest request)
@@ -51,8 +56,7 @@ namespace BackEnd.Controllers
                 var bookCopyList = new List<BookCopy>(GetById(request.ISBN));
                 if (bookCopyList.Count == 0)
                 {
-                    //no bookcopy is available
-                    
+                    //no bookcopy is available 
 
                 }
                 else
