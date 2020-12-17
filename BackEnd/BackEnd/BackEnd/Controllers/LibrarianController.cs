@@ -47,10 +47,10 @@ namespace BackEnd.Controllers
                 {
                     listofExpiringRentalContracts.Add(rentalUser);
                     //set the is available to 1
-                    var currentRentalID = rentalUser.RentalContractID ?? default (int);
+                    var currentRentalID = rentalUser.ContractID ?? default (int);
                     var containsBookCopyID =
-                        _context.Contain.FirstOrDefault(x => x.RentalContractID == currentRentalID);
-                    var currentBookCopyID = containsBookCopyID.BookCopyID;
+                        _context.Contain.FirstOrDefault(x => x.Rental_ContractcontractID == currentRentalID);
+                    var currentBookCopyID = containsBookCopyID.Book_CopycopyID;
                     var bookCopy = _context.BookCopies.FirstOrDefault(x => x.CopyID == currentBookCopyID);
                     bookCopy.IsAvailable = true;
                 }
