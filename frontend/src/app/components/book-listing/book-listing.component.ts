@@ -15,19 +15,19 @@ export class BookListingComponent implements OnInit {
   // genre: string;
   // releaseDate: Date;
   // publisher: string;
-  submitForm(customerData: any){
+  submitForm(customerData: any): void{
     // Process checkout data here
-    console.log("lalala");
-
+    console.log('lalala');
+    // I want to send this data to the database
     console.log(this.checkoutForm);
-    console.log("Your ISBN is:",this.checkoutForm.controls['ISBN'].value)
-    console.log("Your Book Name is:",this.checkoutForm.controls['bookName'].value)
-    console.log("Your Author Name is:",this.checkoutForm.controls['authorName'].value)
-    console.log("Your Genre is:",this.checkoutForm.controls['genre'].value)
-    console.log("Your Release Date is:",this.checkoutForm.controls['releaseDate'].value)
-    console.log("Your Publisher is:",this.checkoutForm.controls['publisher'].value)
-    console.log("Your start date is:",this.checkoutForm.controls['startDate'].value)
-    console.log("Your end date is:",this.checkoutForm.controls['endDate'].value)
+    console.log('Your ISBN is:', this.checkoutForm.controls.ISBN.value);
+    console.log('Your Book Name is:', this.checkoutForm.controls.bookName.value);
+    console.log('Your Author Name is:', this.checkoutForm.controls.authorName.value);
+    console.log('Your Genre is:', this.checkoutForm.controls.genre.value);
+    console.log('Your Release Date is:', this.checkoutForm.controls.releaseDate.value);
+    console.log('Your Publisher is:', this.checkoutForm.controls.publisher.value);
+    console.log('Your start date is:', this.checkoutForm.controls.startDate.value);
+    console.log('Your end date is:', this.checkoutForm.controls.endDate.value);
     this.checkoutForm.reset();
     console.warn('Your order has been submitted', customerData);
   }
@@ -39,12 +39,12 @@ export class BookListingComponent implements OnInit {
     // let releaseDate= this.releaseDate;
     // let publisher= this.ISBN;
     this.checkoutForm = this.formBuilder.group({
-      ISBN:undefined,
-      bookName:"",
-      authorName:"",
-      genre:"",
+      ISBN: undefined,
+      bookName: '',
+      authorName: '',
+      genre: '',
       releaseDate: undefined,
-      publisher:"",
+      publisher: '',
       startDate: undefined,
       endDate: undefined,
     });
@@ -55,7 +55,7 @@ export class BookListingComponent implements OnInit {
     this.dateForm = new FormGroup({
       start: new FormControl(new Date(year, month, day)),
       end: new FormControl(new Date(year, month, day))
-    })
+    });
 
    }
 

@@ -8,9 +8,9 @@
               <mat-label>ISBN</mat-label>
               <input matInput placeholder="Please enter the book ISBN" formControlName="ISBN">
             </mat-form-field>
-            <img src="./../../ISBN_notFound.jpg" class="unknownBookImage" *ngIf="true"/>
+            <!-- <img src="./../../ISBN_notFound.jpg" class="unknownBookImage" *ngIf="true"/> -->
             <br><br>
-            <div class="ISBN-isFound" *ngIf="false">
+            <div class="ISBN-isFound" *ngIf="true">
               <span class="leftInput"><h3 style="display: inline; color:blue">Book name: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
               <span class="rightInput"><h3 style="display: inline; color:blue">Author: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
               <br><br>
@@ -20,7 +20,7 @@
               <span class="leftInput"><h3 style="display: inline; color:blue">Publisher: </h3><h3 style="display: inline;">     ISBN IS FOUND</h3></span>
               <br><br>
             </div>
-            <div class="ISBN-isNotFound" *ngIf="true">
+            <div class="ISBN-isNotFound" *ngIf="false">
               <mat-form-field class="leftInput" [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value)">
                   <mat-label>Book name</mat-label>
                   <input matInput placeholder="Please enter the book name" formControlName="bookName">
@@ -89,7 +89,7 @@
 
           </div>
           <br>
-<!--          <button mat-raised-button color="primary" class="submitForm" (click)="submitForm();" type="submit">submit</button>-->
+          <button mat-raised-button color="primary" class="submitForm" (click)="submitForm(checkoutForm);" type="submit">submit</button>
 
         </mat-card>
 
