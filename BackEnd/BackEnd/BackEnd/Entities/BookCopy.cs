@@ -10,18 +10,18 @@ namespace BackEnd.Entities
         public bool IsAvailable { get; set; }
         public string ISBN { get; set; }
         public int ShelfID { get; set; }
-        public int OwnerContractID { get; set; }
+        public int OWNERcontractId { get; set; }
 
     
 
-        public BookCopy(string currentState, bool isAvailable, string ISBN, int shelfID, int ownerContractID)
+        public BookCopy(string currentState, bool isAvailable, string ISBN, int shelfID, int OWNERcontractId)
         {
             CopyID = null;
             CurrentState = currentState;
             IsAvailable = isAvailable;
             this.ISBN = ISBN;
             ShelfID = shelfID;
-            OwnerContractID = ownerContractID;
+            this.OWNERcontractId = OWNERcontractId;
         }
 
 

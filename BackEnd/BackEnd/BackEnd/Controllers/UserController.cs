@@ -127,8 +127,8 @@ namespace BackEnd.Controllers
                 var bookISBN = bookcopy.ISBN;
                 var bookOr = await _context.Books.FirstAsync(x => x.ISBN == bookISBN);
                 var bookName = bookOr.Name;
-                var ownerContractID = bookcopy.OwnerContractID;
-                var ownerContractDetail = await _context.OwnerContracts.FirstAsync(x => x.OwnerContractID == ownerContractID);
+                var ownerContractID = bookcopy.OWNERcontractId;
+                var ownerContractDetail = await _context.OwnerContracts.FirstAsync(x => x.ContractID == ownerContractID);
                 var branch = ownerContractDetail.BranchID;
                 var branches = await _context.Branches.FirstAsync(x => x.BranchID == branch);
                 var branchName = branches.Name;

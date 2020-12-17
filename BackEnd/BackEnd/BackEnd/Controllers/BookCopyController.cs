@@ -37,9 +37,20 @@ namespace BackEnd.Controllers
 
 
         [HttpGet("byId")]
-        public ActionResult<List<BookCopy>> GetById(string id)
+        public ActionResult<List<BookCopyResponse>> GetById(string id)
         {
-            return _context.BookCopies.Where(x=> x.ISBN == id && x.IsAvailable ).ToList();
+            var availableBooks = _context.BookCopies.Where(x=> x.ISBN == id && x.IsAvailable ).ToList();
+            var result = new List<BookCopyResponse>();
+
+            foreach (var bookCopy in availableBooks)
+            {
+                
+                var ownerContract = _context.OwnerContracts.First(x => x.ContractID == bookCopy.OWNERcontractId);
+                var b = new BookCopyResponse {BranchId = ownerContract.BranchID, CopyId = bookCopy.CopyID ?? default(int)};
+                result.Add(b);
+            }
+
+            return result;
         }
         
         

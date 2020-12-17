@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BackEnd.Entities;
 using BackEnd.Helpers;
@@ -32,10 +33,33 @@ namespace BackEnd.Controllers
             copy.IsAvailable = false;
             _context.BookCopies.Update(copy);
             var userEmail = HttpContext.Items["Email"] as string;
-            var userId = _context.Users.FirstAsync(x => x.Email == userEmail).Id;
+            var user = await _context.Users.FirstAsync(x => x.Email == userEmail);
+            var userId = user.UserId ?? default(int);
             await _context.Carts.AddAsync(new Cart(userId, copy.CopyID ?? default(int)));
             await _context.SaveChangesAsync();
             return Ok();
+        }
+        
+        [AuthorizeUser]
+        [HttpGet("get")]
+        public async Task<List<CartItemResponse>> GetAllCart()
+        {
+
+            var userEmail = HttpContext.Items["Email"] as string;
+            var user = await _context.Users.FirstAsync(x => x.Email == userEmail);
+            var userId = user.UserId ?? default(int);
+
+            var _addedThings = await _context.Carts.Where(x => x.UserId == userId).ToListAsync();
+            var result = new List<CartItemResponse>();
+
+            foreach (var v in _addedThings)
+            {
+                var bc = await _context.BookCopies.FirstAsync(x => x.CopyID == v.BookCopyId);
+                var book = GetByISBN(bc.ISBN);
+
+                result.Add(new CartItemResponse {CopyId = bc.CopyID ?? default(int), BookName = book.Name});
+            }
+            return result;
         }
 
         [AuthorizeUser]
@@ -67,23 +91,33 @@ namespace BackEnd.Controllers
             return _context.Waitlists.FirstOrDefault(x => x.ISBN == id);
         }
 
+        [AuthorizeUser]
         [HttpPost("towaitlist")]
-        public async Task<IActionResult> AddToWaitlist(WaitOnBookRequest request)
+        public async Task<IActionResult> AddToWaitlist(string ISBN)
         {
             //check if waitlist exists; if not: create a new one for the associated book
 
-            var bookWaitlist = GetWaitlist(request.ISBN);
+            var bookWaitlist = GetWaitlist(ISBN);
             if (bookWaitlist == null)
             {
-                var originalBook = GetByISBN(request.ISBN);
-                var new_waitlist = new Waitlist(request.ISBN);
+                var new_waitlist = new Waitlist(ISBN);
                 _context.Waitlists.Add(new_waitlist);
                 _context.SaveChanges();
             }
+            bookWaitlist = GetWaitlist(ISBN);
 
-            var waitingList = new Waiting(request.UserID, request.waitlistID);
-            _context.WaitingPeople.Add(waitingList);
-            _context.SaveChanges();
+            var userEmail = HttpContext.Items["Email"] as string;
+            var userId = _context.Users.FirstAsync(x => x.Email == userEmail).Id;
+            var checkExists =
+                _context.WaitingPeople.FirstOrDefault(
+                    x => x.UserID == userId && x.WaitlistID == bookWaitlist.WaitlistID);
+            if (checkExists == null)
+            {
+                var waitingList = new Waiting(userId, bookWaitlist.WaitlistID ?? default(int));
+                _context.WaitingPeople.Add(waitingList);
+                _context.SaveChanges();
+            }
+            
 
             return Ok();
         }

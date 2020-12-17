@@ -7,7 +7,6 @@ namespace BackEnd.Models
     public class AddBookCopyRequest
     {
         [Required] public string Isbn { get; set; }
-        [Required] public int UserID { get; set; }
         [Required] public DateTime EndDate { get; set; }
         [Required] public int branchID { get; set; }
         [Required] public string Name { get; set; }

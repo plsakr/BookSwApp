@@ -8,9 +8,9 @@ namespace BackEnd.Entities
         public int? WaitlistID { get; set; }
         public string ISBN { get; set; }
 
-        public Waitlist(string Isbn)
+        public Waitlist(string ISBN)
         {
-            ISBN = Isbn;
+            this.ISBN = ISBN;
             WaitlistID  = null;
         }
 

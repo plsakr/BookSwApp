@@ -8,9 +8,9 @@ public class Branch
     public int Phone { get; set; }
 
 
-    public Branch(int branchId, string name, string address, int phone)
+    public Branch(int branchID, string name, string address, int phone)
     {
-        BranchID = branchId;
+        BranchID = branchID;
         Name = name;
         Address = address;
         Phone = phone;

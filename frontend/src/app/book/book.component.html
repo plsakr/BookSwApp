@@ -1,19 +1,12 @@
 <div class="parent">
-  <div class="breadcrumbs">
-    <p>Library / Young-Adult / The Maze Runner</p>
-  </div>
 <div class="book-info">
-  <div class="book-image column">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/91B7RJio2pL.jpg">
-  </div>
   <div class="middle-col column">
     <h1>{{myBook.name}}</h1>
     <h3>{{myBook.author}}</h3>
     <mat-chip-list >
-      <mat-chip color="accent" selected>Sci-Fi</mat-chip>
-      <mat-chip color="accent" selected>Fiction</mat-chip>
+      <mat-chip color="accent" selected *ngFor="let tag of myBook.tags">{{tag}}</mat-chip>
     </mat-chip-list>
-    <p style="margin-top: 1rem">{{myBook.description}}</p>
+<!--    <p style="margin-top: 1rem">{{myBook.description}}</p>-->
   </div>
   <div class="right-col column">
     <mat-card>
@@ -21,6 +14,7 @@
         <p>This book is available in {{myBook.availableIn.length}} libraries</p>
       </mat-card-content>
       <mat-card-actions>
+        <div *ngIf="myBook.availableIn.length > 0">
         <h4>Select a library:</h4>
         <mat-form-field appearance="fill">
           <mat-label>Library</mat-label>
@@ -30,13 +24,12 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-flat-button color="primary"><mat-icon>add_shopping_cart</mat-icon>Add To Cart</button>
+        </div>
+        <button *ngIf="!addWaitlist" mat-flat-button color="primary" (click)="onAddCart()">Add To Cart</button>
+        <button *ngIf="addWaitlist" mat-flat-button color="primary" (click)="onAddWaitlist()">Add To Waitlist</button>
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
-<div>
-  <h2>Customer's who rented this item also rented:</h2>
 </div>
 </div>
 

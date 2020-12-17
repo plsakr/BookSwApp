@@ -1,14 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {Router} from '@angular/router';
+
+
+type BookResult = {
+  author: string,
+  genre: string,
+  isbn: string,
+  name: string,
+  publisher: string,
+  releaseDate: string,
+  tags: tag[]
+};
+
+type tag = {
+  tagName: string,
+  bookISBN: string
+};
+
 @Component({
   selector: 'app-book-listing',
   templateUrl: './book-listing.component.html',
   styleUrls: ['./book-listing.component.css']
 })
-
 export class BookListingComponent implements OnInit {
   dateForm: FormGroup;
   checkoutForm;
+  isFound = false;
+  // public foundISBN: Observable<boolean> = this.isFound.asObservable();
+  name = '';
+  author = '';
+  genre = '';
+  date = '';
+  publisher = '';
   // ISBN: number;
   // bookName: string;
   // authorName: string;
@@ -20,18 +46,42 @@ export class BookListingComponent implements OnInit {
     console.log('lalala');
     // I want to send this data to the database
     console.log(this.checkoutForm);
-    console.log('Your ISBN is:', this.checkoutForm.controls.ISBN.value);
-    console.log('Your Book Name is:', this.checkoutForm.controls.bookName.value);
-    console.log('Your Author Name is:', this.checkoutForm.controls.authorName.value);
-    console.log('Your Genre is:', this.checkoutForm.controls.genre.value);
-    console.log('Your Release Date is:', this.checkoutForm.controls.releaseDate.value);
-    console.log('Your Publisher is:', this.checkoutForm.controls.publisher.value);
-    console.log('Your start date is:', this.checkoutForm.controls.startDate.value);
-    console.log('Your end date is:', this.checkoutForm.controls.endDate.value);
+    if (!this.isFound) {
+      const post = {
+        Isbn: this.checkoutForm.controls.ISBN.value,
+        EndDate: this.checkoutForm.controls.endDate.value,
+        branchID: 1,
+        Name: this.checkoutForm.controls.bookName.value,
+        Author: this.checkoutForm.controls.authorName.value,
+        Genre: this.checkoutForm.controls.genre.value,
+        ReleaseDate: this.checkoutForm.controls.releaseDate.value,
+        Publisher: this.checkoutForm.controls.publisher.value
+      };
+      this.http.post(`http://localhost:5000/OwnerContract/addBookCopy`, post, {withCredentials: true}).subscribe(h => {
+        this.checkoutForm.reset();
+        this.router.navigate(['']);
+      });
+    } else {
+      const post = {
+        Isbn: this.checkoutForm.controls.ISBN.value,
+        EndDate: this.checkoutForm.controls.endDate.value,
+        branchID: 1,
+        Name: this.name,
+        Author: this.author,
+        Genre: this.genre,
+        ReleaseDate: this.date,
+        Publisher: this.publisher,
+      };
+      this.http.post(`http://localhost:5000/OwnerContract/addBookCopy`, post, {withCredentials: true}).subscribe(h => {
+        this.checkoutForm.reset();
+        this.router.navigate(['']);
+      });
+    }
+
     this.checkoutForm.reset();
     console.warn('Your order has been submitted', customerData);
   }
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private cdRef: ChangeDetectorRef, private router: Router) {
     // let ISBN= this.ISBN;
     // let bookName= this.bookName ;
     // let authorName= this.authorName;
@@ -57,6 +107,25 @@ export class BookListingComponent implements OnInit {
       end: new FormControl(new Date(year, month, day))
     });
 
+   }
+
+   onISBNChange(): void {
+      const isbn = this.checkoutForm.controls.ISBN.value;
+      this.http.get<BookResult | null>(`http://localhost:5000/book/byId?id=${isbn}`).subscribe(h => {
+        console.log(h);
+        if (h == null)
+        {
+          this.isFound = false;
+        } else {
+          this.isFound = true;
+          this.name = h.name;
+          this.author = h.author;
+          this.genre = h.genre;
+          this.publisher = h.publisher;
+          this.date = h.releaseDate;
+        }
+        this.cdRef.detectChanges();
+      });
    }
 
   ngOnInit(): void {

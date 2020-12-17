@@ -5,22 +5,20 @@ namespace BackEnd.Entities
 {
     public class OwnerContract
     {
-        public int? OwnerContractID { get; set; }
+        public int? ContractID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int BranchID { get; set; }
         public int UserID { get; set; }
 
-        public string ISBN { get; set; }
 
 
-        public OwnerContract(int userID, string ISBN, int branchID, DateTime endDate)
+        public OwnerContract(int userID, int branchID, DateTime endDate)
         {
             StartDate = DateTime.Today;
             EndDate = endDate;
             BranchID = branchID;
             UserID = userID;
-            this.ISBN = ISBN;
 
         }
 

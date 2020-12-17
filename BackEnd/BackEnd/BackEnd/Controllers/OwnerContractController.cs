@@ -40,6 +40,7 @@ namespace BackEnd.Controllers
         }
 
 
+        [AuthorizeUser]
         [HttpPost("addBookCopy")]
         public async Task<IActionResult> CreateBookCopy(AddBookCopyRequest request)
         {
@@ -58,11 +59,16 @@ namespace BackEnd.Controllers
             }
             //state to be changed
             var av = "New";
-            var ownerContract = new OwnerContract(request.UserID, request.Isbn, request.branchID, request.EndDate);
+            var email = HttpContext.Items["Email"] as string;
+            //2-search for users that have this email in the db
+            var user = await _context.Users.FirstAsync(x => x.Email == email);
+            //3- get the user id
+            var userId = user.UserId;
+            var ownerContract = new OwnerContract(userId ?? default(int), request.branchID, request.EndDate);
             _context.OwnerContracts.Add(ownerContract);
             _context.SaveChanges();
-            int id = ownerContract.OwnerContractID ?? default (int);
-            var bookCopyNew = new BookCopy(currentState: av , isAvailable: true, ISBN: request.Isbn, shelfID: 0, ownerContractID: id);
+            int id = ownerContract.ContractID ?? default (int);
+            var bookCopyNew = new BookCopy(currentState: av , isAvailable: true, ISBN: request.Isbn, shelfID: 0, OWNERcontractId: id);
             _context.BookCopies.Add(bookCopyNew);
             _context.SaveChanges();
             

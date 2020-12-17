@@ -9,10 +9,10 @@ namespace BackEnd.Entities
         public int WaitlistID { get; set; }
         public DateTime EntryTime { get; set; }
 
-        public Waiting(int userId, int waitlistId)
+        public Waiting(int userID, int waitlistID)
         {
-            UserID = userId;
-            WaitlistID = waitlistId;
+            UserID = userID;
+            WaitlistID = waitlistID;
         }
     }
 }
