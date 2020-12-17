@@ -43,6 +43,7 @@ namespace BackEnd.Controllers
             // DON'T FORGET THAT we need to add long blobs 
             var book_new = new Book(request.Isbn, request.Name, request.Author, request.Genre, request.ReleaseDate, request.Publisher);
             _context.Books.Add(book_new);
+            _context.SaveChanges();
 
             return Ok();
         }
