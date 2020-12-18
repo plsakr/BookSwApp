@@ -94,6 +94,7 @@ namespace BackEnd.Controllers
                 var book = _context.Books.FirstOrDefault(x => x.Name == bookName);
                 var bookCopyCurrent = _context.BookCopies.FirstOrDefault(x => x.ISBN == book.ISBN);
                 bookCopyCurrent.IsAvailable = true;
+                _context.SaveChanges();
             }
 
             return Ok();
@@ -152,6 +153,7 @@ namespace BackEnd.Controllers
                 var book = _context.Books.FirstOrDefault(x => x.Name == bookName);
                 var bookCopyCurrent = _context.BookCopies.FirstOrDefault(x => x.ISBN == book.ISBN);
                 bookCopyCurrent.IsAvailable = false;
+                _context.SaveChanges();
             }
             
         }

@@ -9,7 +9,7 @@ interface Field{
   editable: boolean;
 }
 interface History{
-  bookName: string, position: number
+  isbn: string, bookName: string, position: number
 }
 
 @Component({
@@ -33,8 +33,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     // end of fields start of history
-    this.http.get<{bookName: string, position: number}[]>('http://localhost:5000/Waitlist', {withCredentials: true}).subscribe(h => {
+    this.http.get<{isbn: string, bookName: string, position: number}[]>('http://localhost:5000/Waitlist', {withCredentials: true}).subscribe(h => {
       this.dataSource = h;
+    });
+  }
+
+  addCart(isbn: string): void {
+    this.http.get(`http://localhost:5000/Waitlist/add?isbn=${isbn}`, {withCredentials: true}).subscribe(h => {
+      this.route.navigate(['/cart']);
     });
   }
 

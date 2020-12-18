@@ -157,7 +157,7 @@
 
                 <ng-container matColumnDef="estimatedTime">
                   <th mat-header-cell *matHeaderCellDef> Actions </th>
-                  <td mat-cell *matCellDef="let element"> <button mat-button *ngIf="element.position === -1">Add to Cart</button> </td>
+                  <td mat-cell *matCellDef="let element"> <button mat-button *ngIf="element.position === -1" (click)="addCart(element.isbn)">Add to Cart</button> </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumnsQ; sticky: true"></tr>

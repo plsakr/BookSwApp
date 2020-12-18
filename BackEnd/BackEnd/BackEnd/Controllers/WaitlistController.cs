@@ -65,7 +65,7 @@ namespace BackEnd.Controllers
                 if (bookCopies.Count > 0)
                     pos--;
                 
-                result.Add(new WaitlistStatusReponse {BookName = bookName, Position = pos});
+                result.Add(new WaitlistStatusReponse {isbn = book.ISBN, BookName = bookName, Position = pos});
             }
 
             return result;
