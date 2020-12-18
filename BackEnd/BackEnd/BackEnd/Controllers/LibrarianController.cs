@@ -44,7 +44,7 @@ namespace BackEnd.Controllers
             var currentDate = DateTime.Today;
             
             //need to get a list of rental contracts
-            var listOfAllRentals = _context.RentalContracts;
+            var listOfAllRentals = _context.RentalContracts.ToList();
             foreach (var rentalUser in listOfAllRentals)
             {
                 if (rentalUser.EndDate == currentDate)
@@ -109,7 +109,7 @@ namespace BackEnd.Controllers
             var currentDate = DateTime.Today;
             
        
-            var listOfAllOwners = _context.OwnerContracts;
+            var listOfAllOwners = _context.OwnerContracts.ToList();
             foreach (var ownerUser in listOfAllOwners)
             {
                 if (ownerUser.EndDate == currentDate)

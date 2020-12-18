@@ -23,10 +23,12 @@ export class LibrarianPageComponent implements OnInit {
 
     this.http.get<{bookName: string, startDate: string, endDate: string, branchName: string, userName: string}[]>('http://localhost:5000/Librarian/GetRentals').subscribe(h => {
       this.dataSource1 = h;
+      console.log(h);
     });
 
     this.http.get<{bookName: string, startDate: string, endDate: string, branchName: string, userName: string}[]>('http://localhost:5000/Librarian/GetOwners').subscribe(h => {
       this.dataSource2 = h;
+      console.log(h);
     });
   }
 
