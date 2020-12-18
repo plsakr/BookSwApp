@@ -61,6 +61,11 @@ export class RegisterUserComponent implements OnInit, OnDestroy {
     password: ['', Validators.minLength(6)],
     repassword: ['', [Validators.required]]
   }, {validator: this.checkPasswords});
+
+  passCheckGroup2 = this.fb.group({
+    password: ['', Validators.minLength(6)],
+    repassword: ['', [Validators.required]]
+  }, {validator: this.checkPasswords});
   registerForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -69,7 +74,7 @@ export class RegisterUserComponent implements OnInit, OnDestroy {
   registerLibrarianForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-    password: this.passCheckGroup,
+    password: this.passCheckGroup2,
     branch: ['', Validators.required],
   });
   passMatcher = new MyErrorStateMatcher();
