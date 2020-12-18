@@ -6,13 +6,9 @@
 
         <mat-card-content style="overflow: hidden;">
           <div style="overflow: auto;">
+            <button mat-button color="primary" (click)="clearRentals()">End Of Day</button>
             <table mat-table [dataSource]="dataSource1" style="overflow: hidden; width:100%" >
 
-              <!-- Position Column -->
-              <ng-container matColumnDef="contractID">
-                <th mat-header-cell *matHeaderCellDef > Contract ID </th>
-                <td mat-cell *matCellDef="let element"> {{element.contractID}} </td>
-              </ng-container>
 
               <!-- Name Column -->
               <ng-container matColumnDef="bookName">
@@ -44,21 +40,6 @@
                 <td mat-cell *matCellDef="let element"> {{element.renterID}} </td>
               </ng-container>
 
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="ownerID">
-                <th mat-header-cell *matHeaderCellDef> Book Owner ID </th>
-                <td mat-cell *matCellDef="let element"> {{element.ownerID}} </td>
-              </ng-container>
-
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="isPending">
-                <th mat-header-cell *matHeaderCellDef> Contract Status </th>
-                <td mat-cell *matCellDef="let element">
-                  <button mat-button color="primary" (click)="element.isPending=false" style="border: 0;" *ngIf="element.isPending">{{"mark as complete"}}</button>
-                  <mat-icon style="position:relative; color:green" *ngIf="!element.isPending">done</mat-icon>
-                </td>
-              </ng-container>
-
               <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
 
@@ -68,10 +49,11 @@
 
       </mat-tab>
 
-      <mat-tab label="Listings Due Today">Table of book listings due today
+      <mat-tab label="Listings Due Today">
 
         <mat-card-content style="overflow: hidden;">
           <div style="overflow: auto;">
+            <button mat-button color="primary" (click)="clearOwners()">End of Day</button>
             <table mat-table [dataSource]="dataSource2" style="overflow: hidden; width:100%" >
 
               <!-- Position Column -->
@@ -125,22 +107,6 @@
             </table>
           </div>
         </mat-card-content>
-
-      </mat-tab>
-
-      <mat-tab label="Rentals Returns Due Today">Table of book rental returns due today
-
-      </mat-tab>
-
-      <mat-tab label="Listing Returns Due Today">Table of book listings returns due today
-
-      </mat-tab>
-
-      <mat-tab label="History of Rentals">Table of History of Rentals
-
-      </mat-tab>
-
-      <mat-tab label="History of Listings">Table of History of Listings
 
       </mat-tab>
 

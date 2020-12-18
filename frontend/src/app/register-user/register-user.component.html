@@ -36,11 +36,11 @@
                   Sign In
                 </button>
 
-                <button
-                  mat-raised-button
-                  class="login-button">
-                  Login with Google
-                </button>
+<!--                <button-->
+<!--                  mat-raised-button-->
+<!--                  class="login-button">-->
+<!--                  Login with Google-->
+<!--                </button>-->
               </form>
             </mat-card-content>
         </mat-tab>
@@ -132,7 +132,8 @@
                 <mat-label>Select Branch</mat-label>
                 <mat-select formControlName="branch">
 
-                  <mat-option value="option"*ngFor="let option of options">{{option}}</mat-option>
+                  <mat-option  value=1>Byblos</mat-option>
+                  <mat-option  value=2>Beirut</mat-option>
                 </mat-select>
               </mat-form-field>
               <mat-form-field>

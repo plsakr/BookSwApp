@@ -31,7 +31,7 @@ type RegisterLibrarianRequest = {
     password: string,
     repassword: string
   }
-  branch: string,
+  branch: number,
 };
 
 // tells the 'confirm password' field when to update its status
@@ -85,7 +85,7 @@ export class RegisterUserComponent implements OnInit, OnDestroy {
       this.router.navigate(['library']);
       console.log('IM LOGGED IN');
     } else if (user.role === 'LIBRARIAN') {
-      this.router.navigate(['user']);
+      this.router.navigate(['librarian']);
       console.log('IM A LIBRARIAN');
     } else if (user.role === 'NONE') {
       // didnt try logging in yet
@@ -116,9 +116,9 @@ export class RegisterUserComponent implements OnInit, OnDestroy {
   }
   onLibrarianRegister(): void {
     if (this.registerLibrarianForm.valid) {
-      const data = this.registerLibrarianForm.getRawValue() as RegisterRequest;
+      const data = this.registerLibrarianForm.getRawValue() as RegisterLibrarianRequest;
       console.log(data);
-      this.getAuth().register(data.name, data.password.password, data.email);
+      this.getAuth().registerLibrarian(data.name, data.password.password, data.email, data.branch);
     }
   }
 

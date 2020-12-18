@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent, data: {expectedRoles: ['USER']}},
   {path: 'listing', component: BookListingComponent, data: {expectedRoles: ['USER']}},
   {path: 'user', component: UserComponent, data: {expectedRoles: ['USER', 'LIBRARIAN']}},
-  {path: 'librarian', component: LibrarianPageComponent, data: {expectedRoles: ['USER']}},
+  {path: 'librarian', component: LibrarianPageComponent, data: {expectedRoles: ['LIBRARIAN']}},
   {path: '**', component: RegisterUserComponent}
 ];
 

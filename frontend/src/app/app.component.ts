@@ -27,6 +27,15 @@ export class AppComponent {
     this.router.navigate(['user']);
   }
   checkout(): void {
-    console.log('checkout');
+    this.router.navigate(['cart']);
+    console.log('cart');
+  }
+
+  add(): void {
+    this.router.navigate(['listing']);
+  }
+
+  home(): void {
+    this.router.navigate(['']);
   }
 }

@@ -1,6 +1,8 @@
 <mat-toolbar color="primary" style="height:64px;">
   <span>Book SwApp</span>
   <span class="toolbar-spacer"></span>
+  <button mat-icon-button (click)="home()"><mat-icon class="white-icon">home</mat-icon></button>
+  <button mat-icon-button (click)="add()"><mat-icon class="white-icon">add</mat-icon></button>
   <button mat-icon-button (click)="user()"><mat-icon class="white-icon">person</mat-icon></button>
   <button mat-icon-button (click)="checkout()" ><mat-icon class="white-icon">shopping_cart</mat-icon></button>
   <button mat-button (click)="logout()">Logout</button>

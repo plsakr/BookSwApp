@@ -34,7 +34,9 @@ namespace BackEnd.Controllers
             _auth = auth;
         }
         
-        public List<TransactionLists> GetByEndDate()
+        
+        [HttpGet("GetRentals")]
+        public ActionResult<List<TransactionLists>> GetByEndDate()
         {
             
             List<RentalContract> listofExpiringRentalContracts = new List<RentalContract>();
@@ -82,9 +84,10 @@ namespace BackEnd.Controllers
         }
 
 
-        public void ClearRentalByEndDate()
+        [HttpGet("ClearRentals")]
+        public IActionResult ClearRentalByEndDate()
         {
-            var toclear = GetByEndDate();
+            var toclear = GetByEndDate().Value;
             foreach (var i in toclear)
             {
                 var bookName = i.BookName;
@@ -92,12 +95,14 @@ namespace BackEnd.Controllers
                 var bookCopyCurrent = _context.BookCopies.FirstOrDefault(x => x.ISBN == book.ISBN);
                 bookCopyCurrent.IsAvailable = true;
             }
-            
+
+            return Ok();
+
         }
 
 
-
-        public List<TransactionLists> GetOwnersByEndDate()
+        [HttpGet("GetOwners")]
+        public ActionResult<List<TransactionLists>> GetOwnersByEndDate()
         {
             List<OwnerContract> listofExpiringOwnerContracts = new List<OwnerContract>();
             List<TransactionLists> listOfOwnersToClear = new List<TransactionLists>();
@@ -137,9 +142,10 @@ namespace BackEnd.Controllers
             return listOfOwnersToClear;
         }
         
+        [HttpGet("ClearOwners")]
         public void ClearOwnerByEndDate()
         {
-            var toclear = GetOwnersByEndDate();
+            var toclear = GetOwnersByEndDate().Value;
             foreach (var i in toclear)
             {
                 var bookName = i.BookName;

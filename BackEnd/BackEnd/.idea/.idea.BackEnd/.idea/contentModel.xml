@@ -33,6 +33,7 @@
           <e p="RentalContract.cs" t="Include" />
           <e p="TaggedWith.cs" t="Include" />
           <e p="TransactionList.cs" t="Include" />
+          <e p="TransactionLists.cs" t="Include" />
           <e p="User.cs" t="Include" />
           <e p="Waiting.cs" t="Include" />
           <e p="Waitlist.cs" t="Include" />

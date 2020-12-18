@@ -27,10 +27,10 @@ table {
     width: 100%;
   }
 button{
-    position:absolute;
-    right:0;
+    /*position:absolute;*/
+    /*right:0;*/
     /* top:35%; */
-    
+
 }
 .CardDisplayArea{
     left:20%;

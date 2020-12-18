@@ -83,6 +83,12 @@ export class AuthService {
     });
   }
 
+  registerLibrarian(name: string, password: string, email: string, branchId: number): void {
+    this.http.post(`${this.authURL}/registerLibrarian`, {name, password, email, branchId}, {withCredentials: true}).subscribe(h => {
+      console.log(h);
+    });
+  }
+
   test(): void{
     this.http.get(`${this.authURL}/test`, {withCredentials: true}).subscribe(h => {
       console.log(h);
